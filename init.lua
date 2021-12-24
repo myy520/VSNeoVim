@@ -1,6 +1,7 @@
 local SuperVim = {
   -- Core
   options = "SuperVim.Core.options",
+  keymaps = "SuperVim.Core.keymaps",
   plugins = "SuperVim.Core.plugins",
   cursor = "SuperVim.Core.cursor",
   -- Configs
