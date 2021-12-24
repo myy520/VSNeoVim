@@ -74,6 +74,8 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-buffer"
   -- Path Completions
   use "hrsh7th/cmp-path"
+  -- CmdLine Completions
+  use "hrsh7th/cmp-cmdline"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
