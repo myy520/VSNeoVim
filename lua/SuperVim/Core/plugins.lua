@@ -109,6 +109,8 @@ return packer.startup(function(use)
   use "numToStr/Comment.nvim"
   -- Autopairs
   use "windwp/nvim-autopairs"
+  -- language server settings defined in json for
+  use "tamago324/nlsp-settings.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
