@@ -8,6 +8,7 @@ local SuperVim = {
   Terminal = "SuperVim.Configs.Terminal",
   Project = "SuperVim.Configs.Project",
   Impatient = "SuperVim.Configs.Impatient",
+  IndentLine = "SuperVim.Configs.IndentLine",
 }
 
 for k,v in pairs(SuperVim) do
