@@ -4,6 +4,7 @@ local SuperVim = {
 
   FileExplorer = "SuperVim.Configs.FileExplorer",
   BufferLine = "SuperVim.Configs.BufferLine",
+  LuaLine = "SuperVim.Configs.LuaLine",
 }
 
 for k,v in pairs(SuperVim) do
