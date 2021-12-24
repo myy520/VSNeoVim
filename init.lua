@@ -21,6 +21,7 @@ local SuperVim = {
   Treesitter = "SuperVim.Configs.Treesitter",
   Comments = "SuperVim.Configs.Comments",
   Autopairs = "SuperVim.Configs.Autopairs",
+  Gitsigns = "SuperVim.Configs.Gitsigns",
 }
 
 for k,v in pairs(SuperVim) do

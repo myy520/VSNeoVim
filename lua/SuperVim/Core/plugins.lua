@@ -111,6 +111,8 @@ return packer.startup(function(use)
   use "windwp/nvim-autopairs"
   -- language server settings defined in json for
   use "tamago324/nlsp-settings.nvim"
+  -- git signs
+  use "lewis6991/gitsigns.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
