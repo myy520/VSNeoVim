@@ -2,6 +2,7 @@ local SuperVim = {
   -- Core
   options = "SuperVim.Core.options",
   plugins = "SuperVim.Core.plugins",
+  cursor = "SuperVim.Core.cursor",
   -- Configs
   FileExplorer = "SuperVim.Configs.FileExplorer",
   BufferLine = "SuperVim.Configs.BufferLine",
