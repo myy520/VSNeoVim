@@ -80,6 +80,8 @@ return packer.startup(function(use)
   use "saadparwaiz1/cmp_luasnip"
   -- LSP CMP
   use "hrsh7th/cmp-nvim-lsp"
+  -- Snippet engine
+  use "L3MON4D3/LuaSnip"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
