@@ -3,6 +3,7 @@ local SuperVim = {
   plugins = "SuperVim.Core.plugins",
 
   FileExplorer = "SuperVim.Configs.FileExplorer",
+  BufferLine = "SuperVim.Configs.BufferLine",
 }
 
 for k,v in pairs(SuperVim) do

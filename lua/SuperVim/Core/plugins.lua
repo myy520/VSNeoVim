@@ -48,8 +48,10 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim"
   -- Icons
   use "kyazdani42/nvim-web-devicons"
-  -- file browser
+  -- File Browser
   use "kyazdani42/nvim-tree.lua"
+  -- BufferLine
+  use "akinsho/bufferline.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
