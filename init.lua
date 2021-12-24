@@ -17,6 +17,7 @@ local SuperVim = {
   Tlescope = "SuperVim.Configs.Telescope",
   Colorizer = "SuperVim.Configs.Colorizer",
   Notification = "SuperVim.Configs.Notification",
+  Treesitter = "SuperVim.Configs.Treesitter",
 }
 
 for k,v in pairs(SuperVim) do

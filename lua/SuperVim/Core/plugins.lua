@@ -100,6 +100,10 @@ return packer.startup(function(use)
   use "preservim/tagbar"
   -- Notification
   use "rcarriga/nvim-notify"
+  -- Maximizer
+  use "szw/vim-maximizer"
+  -- Treesitter
+  use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
