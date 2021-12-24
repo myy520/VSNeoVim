@@ -78,6 +78,8 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-cmdline"
   -- Snippet Completions
   use "saadparwaiz1/cmp_luasnip"
+  -- LSP CMP
+  use "hrsh7th/cmp-nvim-lsp"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
