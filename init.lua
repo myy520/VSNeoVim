@@ -18,6 +18,7 @@ local SuperVim = {
   Colorizer = "SuperVim.Configs.Colorizer",
   Notification = "SuperVim.Configs.Notification",
   Treesitter = "SuperVim.Configs.Treesitter",
+  Comments = "SuperVim.Configs.Comments",
 }
 
 for k,v in pairs(SuperVim) do
