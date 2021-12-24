@@ -70,6 +70,8 @@ return packer.startup(function(use)
   use "folke/which-key.nvim"
   -- AutoCompletion with cmp
   use "hrsh7th/nvim-cmp"
+  -- Buffer Completions
+  use "hrsh7th/cmp-buffer"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
