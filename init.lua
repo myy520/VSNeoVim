@@ -15,6 +15,7 @@ local SuperVim = {
   CMP = "SuperVim.Configs.CMP",
   LSP = "SuperVim.Configs.LSP",
   Tlescope = "SuperVim.Configs.Telescope",
+  Colorizer = "SuperVim.Configs.Colorizer",
 }
 
 for k,v in pairs(SuperVim) do
