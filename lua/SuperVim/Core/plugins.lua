@@ -84,6 +84,8 @@ return packer.startup(function(use)
   use "L3MON4D3/LuaSnip"
   -- A bunch of snippet to use
   use "rafamadriz/friendly-snippets"
+  -- Language Server Protocole
+  use "neovim/nvim-lspconfig"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
