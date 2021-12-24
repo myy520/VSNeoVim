@@ -6,6 +6,7 @@ local SuperVim = {
   BufferLine = "SuperVim.Configs.BufferLine",
   LuaLine = "SuperVim.Configs.LuaLine",
   Terminal = "SuperVim.Configs.Terminal",
+  Project = "SuperVim.Configs.Project",
 }
 
 for k,v in pairs(SuperVim) do
