@@ -82,6 +82,8 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lsp"
   -- Snippet engine
   use "L3MON4D3/LuaSnip"
+  -- A bunch of snippet to use
+  use "rafamadriz/friendly-snippets"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
