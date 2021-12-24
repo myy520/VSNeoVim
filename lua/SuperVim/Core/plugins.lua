@@ -94,10 +94,12 @@ return packer.startup(function(use)
   use "nvim-telescope/telescope.nvim"
   -- Neovim Colorizer
   use "norcalli/nvim-colorizer.lua"
-  -- tabnine cmp
+  -- Tabnine cmp
   use { "tzachar/cmp-tabnine", run="./install.sh"}
-  -- tagbar
+  -- Tagbar
   use "preservim/tagbar"
+  -- Notification
+  use "rcarriga/nvim-notify"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
