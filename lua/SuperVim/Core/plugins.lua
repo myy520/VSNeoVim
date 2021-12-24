@@ -64,6 +64,8 @@ return packer.startup(function(use)
   use "lukas-reineke/indent-blankline.nvim"
   -- Alpha
   use "goolord/alpha-nvim"
+  -- This is needed to fix lsp doc highlight
+  use "antoinemadec/FixCursorHold.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
