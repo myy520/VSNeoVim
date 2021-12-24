@@ -14,6 +14,7 @@ local SuperVim = {
   WhichKey = "SuperVim.Configs.WhichKey",
   CMP = "SuperVim.Configs.CMP",
   LSP = "SuperVim.Configs.LSP",
+  Tlescope = "SuperVim.Configs.Telescope",
 }
 
 for k,v in pairs(SuperVim) do
