@@ -13,6 +13,7 @@ local SuperVim = {
   Alpha = "SuperVim.Configs.Alpha",
   WhichKey = "SuperVim.Configs.WhichKey",
   CMP = "SuperVim.Configs.CMP",
+  LSP = "SuperVim.Configs.LSP",
 }
 
 for k,v in pairs(SuperVim) do
