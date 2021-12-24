@@ -46,6 +46,8 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim"
   -- Useful lua functions used ny lots of plugins
   use "nvim-lua/plenary.nvim"
+  -- Icons
+  use "kyazdani42/nvim-web-devicons"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
