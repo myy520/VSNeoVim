@@ -19,6 +19,7 @@ local SuperVim = {
   Notification = "SuperVim.Configs.Notification",
   Treesitter = "SuperVim.Configs.Treesitter",
   Comments = "SuperVim.Configs.Comments",
+  Autopairs = "SuperVim.Configs.Autopairs",
 }
 
 for k,v in pairs(SuperVim) do
