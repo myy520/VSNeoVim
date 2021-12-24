@@ -62,6 +62,8 @@ return packer.startup(function(use)
   use "lewis6991/impatient.nvim"
   -- IndentLine
   use "lukas-reineke/indent-blankline.nvim"
+  -- Alpha
+  use "goolord/alpha-nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
