@@ -66,6 +66,8 @@ return packer.startup(function(use)
   use "goolord/alpha-nvim"
   -- This is needed to fix lsp doc highlight
   use "antoinemadec/FixCursorHold.nvim"
+  -- WhichKey
+  use "folke/which-key.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

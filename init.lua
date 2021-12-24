@@ -10,6 +10,7 @@ local SuperVim = {
   Impatient = "SuperVim.Configs.Impatient",
   IndentLine = "SuperVim.Configs.IndentLine",
   Alpha = "SuperVim.Configs.Alpha",
+  WhichKey = "SuperVim.Configs.WhichKey",
 }
 
 for k,v in pairs(SuperVim) do
