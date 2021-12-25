@@ -3,6 +3,13 @@ if not status_ok then
 	return
 end
 
+
+if vim.fn.has("win32") == 1 then
+  plugins_count = vim.fn.len(vim.fn.globpath("~/AppData/Local/nvim-data/site/pack/packer/start", "*", 0, 1))
+else
+  plugins_count = vim.fn.len(vim.fn.globpath("~/.local/share/nvim/site/pack/packer/start", "*", 0, 1))
+end
+
 local dashboard = require("alpha.themes.dashboard")
 dashboard.section.header.val = {
   '',
@@ -17,7 +24,7 @@ dashboard.section.header.val = {
   ' ⠙⠃   ⣼⣿⡟  ⠈⠻⣿⣿⣦⣌⡇⠻⣿⣿⣷⣿⣿⣿ ⣿⣿⡇⠄⠛⠻⢷⣄ ',
   '      ⢻⣿⣿⣄   ⠈⠻⣿⣿⣿⣷⣿⣿⣿⣿⣿⡟ ⠫⢿⣿⡆     ',
   '       ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃     ',
-  '       S  U  P  E  R  V  I  M      ',
+  '          D R A G O N V I M        ',
   '',
 }
 dashboard.section.buttons.val = {
@@ -35,7 +42,8 @@ dashboard.section.buttons.val = {
 
 dashboard.section.footer.val = {
   "",
-  "--               S U P E R V I M              --",
+  "--              D R A G O N V I M             --",
+  "--        DragonVim Loaded " .. plugins_count .. " plugins        --",
   "-- do one thing, do it well - unix philosophy --",
   "",
 }
