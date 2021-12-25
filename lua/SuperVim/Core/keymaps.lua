@@ -53,6 +53,6 @@ keymap('n', '<C-w>', ':bd<CR>', options)
 -- Nvim Tree
 keymap('n', '<C-n>', ':NvimTreeToggle<CR>', options)
 -- Tagbar
-keymap('n', '<C-t>', ':TagbarToggle<CR>', options)
+keymap('n', '<C-t>', ':SymbolsOutline<CR>', options)
 -- Maximizer
 keymap('n', 'z', ':MaximizerToggle<CR>', options)

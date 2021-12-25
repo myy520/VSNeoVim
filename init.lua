@@ -23,6 +23,7 @@ local SuperVim = {
   Comments = "SuperVim.Configs.Comments",
   Autopairs = "SuperVim.Configs.Autopairs",
   Gitsigns = "SuperVim.Configs.Gitsigns",
+  SymbolsOutline = "SuperVim.Configs.SymbolsOutline",
 }
 
 for k,v in pairs(SuperVim) do

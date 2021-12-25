@@ -97,7 +97,7 @@ return packer.startup(function(use)
   -- Tabnine cmp
   use { "tzachar/cmp-tabnine", run="./install.sh"}
   -- Tagbar
-  use "preservim/tagbar"
+  use "simrat39/symbols-outline.nvim"
   -- Notification
   use "rcarriga/nvim-notify"
   -- Maximizer
