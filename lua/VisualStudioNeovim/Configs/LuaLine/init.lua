@@ -84,13 +84,8 @@ ins_left {
 ins_left {
   'diagnostics',
   symbols = { error = ' ', warn = ' ', info = ' ' },
-  diagnostics_color = {
-    color_error = { fg = colors.red },
-    color_warn = { fg = colors.yellow },
-    color_info = { fg = colors.green },
-  },
   sources = { "nvim_diagnostic" },
-	sections = { "error", "warn", "info"},
+	sections = { "error", "warn", "info", "hint"},
 	update_in_insert = false,
 	always_visible = true,
 }
