@@ -2,13 +2,13 @@ local colors = {
     bg = "#283347",
     fg = "#ffffff",
     blue = "#51afef",
-    yellow = "#ECBE7B",
+    yellow = "#e0af68",
     cyan = "#00b4b4",
     darkblue = "#081633",
-    green = "#98be65",
+    green = "#10B981",
     orange = "#FF8800",
     magenta = "#c678dd",
-    red = "#ec5f67",
+    red = "#db4b4b",
 }
 local conditions = {
     buffer_not_empty = function()
@@ -87,7 +87,7 @@ ins_left {
   diagnostics_color = {
     color_error = { fg = colors.red },
     color_warn = { fg = colors.yellow },
-    color_info = { fg = colors.cyan },
+    color_info = { fg = colors.green },
   },
   sources = { "nvim_diagnostic" },
 	sections = { "error", "warn", "info"},
