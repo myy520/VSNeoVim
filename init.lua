@@ -1,31 +1,31 @@
-local DragonVim = {
+local VisualStudioNeovim = {
   -- Core
-  options = "DragonVim.Core.options",
-  keymaps = "DragonVim.Core.keymaps",
-  plugins = "DragonVim.Core.plugins",
-  cursor = "DragonVim.Core.cursor",
+  options = "VisualStudioNeovim.Core.options",
+  keymaps = "VisualStudioNeovim.Core.keymaps",
+  plugins = "VisualStudioNeovim.Core.plugins",
+  cursor = "VisualStudioNeovim.Core.cursor",
   -- Configs
-  FileExplorer = "DragonVim.Configs.FileExplorer",
-  BufferLine = "DragonVim.Configs.BufferLine",
-  LuaLine = "DragonVim.Configs.LuaLine",
-  Terminal = "DragonVim.Configs.Terminal",
-  Project = "DragonVim.Configs.Project",
-  Impatient = "DragonVim.Configs.Impatient",
-  IndentLine = "DragonVim.Configs.IndentLine",
-  Alpha = "DragonVim.Configs.Alpha",
-  WhichKey = "DragonVim.Configs.WhichKey",
-  CMP = "DragonVim.Configs.CMP",
-  LSP = "DragonVim.Configs.LSP",
-  Tlescope = "DragonVim.Configs.Telescope",
-  Colorizer = "DragonVim.Configs.Colorizer",
-  Notification = "DragonVim.Configs.Notification",
-  Treesitter = "DragonVim.Configs.Treesitter",
-  Comments = "DragonVim.Configs.Comments",
-  Autopairs = "DragonVim.Configs.Autopairs",
-  Gitsigns = "DragonVim.Configs.Gitsigns",
-  SymbolsOutline = "DragonVim.Configs.SymbolsOutline",
+  FileExplorer = "VisualStudioNeovim.Configs.FileExplorer",
+  BufferLine = "VisualStudioNeovim.Configs.BufferLine",
+  LuaLine = "VisualStudioNeovim.Configs.LuaLine",
+  Terminal = "VisualStudioNeovim.Configs.Terminal",
+  Project = "VisualStudioNeovim.Configs.Project",
+  Impatient = "VisualStudioNeovim.Configs.Impatient",
+  IndentLine = "VisualStudioNeovim.Configs.IndentLine",
+  Alpha = "VisualStudioNeovim.Configs.Alpha",
+  WhichKey = "VisualStudioNeovim.Configs.WhichKey",
+  CMP = "VisualStudioNeovim.Configs.CMP",
+  LSP = "VisualStudioNeovim.Configs.LSP",
+  Tlescope = "VisualStudioNeovim.Configs.Telescope",
+  Colorizer = "VisualStudioNeovim.Configs.Colorizer",
+  Notification = "VisualStudioNeovim.Configs.Notification",
+  Treesitter = "VisualStudioNeovim.Configs.Treesitter",
+  Comments = "VisualStudioNeovim.Configs.Comments",
+  Autopairs = "VisualStudioNeovim.Configs.Autopairs",
+  Gitsigns = "VisualStudioNeovim.Configs.Gitsigns",
+  SymbolsOutline = "VisualStudioNeovim.Configs.SymbolsOutline",
 }
 
-for k,v in pairs(DragonVim) do
+for k,v in pairs(VisualStudioNeovim) do
   require(v)
 end
