@@ -11,6 +11,8 @@
   </a>
 </div>
 
+# Visual Studio NeoVim
+
 ## Documentation
 You can find all the documentation for VSNeoVim at [wiki](https://github.com/VSNeoVim/VSNeoVim/wiki)
 
