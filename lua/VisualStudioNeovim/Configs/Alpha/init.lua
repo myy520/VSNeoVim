@@ -12,6 +12,8 @@ end
 
 local dashboard = require("alpha.themes.dashboard")
 dashboard.section.header.val = {
+  '',
+  '',
   '888     888  .d8888b.  888b    888                  888     888 d8b               ',
   '888     888 d88P  Y88b 8888b   888                  888     888 Y8P               ',
   '888     888 Y88b.      88888b  888                  888     888                   ',
