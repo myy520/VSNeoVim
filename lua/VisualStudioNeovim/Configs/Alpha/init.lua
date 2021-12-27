@@ -38,9 +38,7 @@ dashboard.section.buttons.val = {
 
 dashboard.section.footer.val = {
   "",
-  "--     V i s u a l S t u d i o N e o v i m    --",
   "--   VisualStudioNeovim Loaded " .. plugins_count .. " plugins    --",
-  "-- do one thing, do it well - unix philosophy --",
   "",
 }
 
