@@ -24,6 +24,7 @@ local VisualStudioNeovim = {
   Autopairs = "VisualStudioNeovim.Configs.Autopairs",
   Gitsigns = "VisualStudioNeovim.Configs.Gitsigns",
   SymbolsOutline = "VisualStudioNeovim.Configs.SymbolsOutline",
+  DAP = "VisualStudioNeovim.Configs.DAP",
 }
 
 for k,v in pairs(VisualStudioNeovim) do

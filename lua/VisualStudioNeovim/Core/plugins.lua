@@ -113,6 +113,10 @@ return packer.startup(function(use)
   use "tamago324/nlsp-settings.nvim"
   -- git signs
   use "lewis6991/gitsigns.nvim"
+  -- debugging
+  use "Pocco81/DAPInstall.nvim"
+  use "mfussenegger/nvim-dap"
+  use "rcarriga/nvim-dap-ui"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
