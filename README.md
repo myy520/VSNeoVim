@@ -30,8 +30,6 @@ Make sure you have the release version of Neovim (0.6).
 ![Demo1](./media/VSNeoVim.png)
 ![Demo2](./media/VSNeoVim-1.png)
 ![Demo3](./media/VSNeoVim-2.png)
-![Demo3](./media/VSNeoVim-3.png)
-
 ## Resources
 
 
