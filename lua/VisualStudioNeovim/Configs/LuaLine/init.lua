@@ -10,6 +10,18 @@ local colors = {
     magenta = "#c678dd",
     red = "#db4b4b",
 }
+
+function env_cleanup(venv)
+  if string.find(venv, "/") then
+    local final_venv = venv
+    for w in venv:gmatch "([^/]+)" do
+      final_venv = w
+    end
+    venv = final_venv
+  end
+  return venv
+end
+
 local conditions = {
     buffer_not_empty = function()
         return vim.fn.empty(vim.fn.expand '%:t') ~= 1
@@ -106,6 +118,25 @@ ins_left {
   }
 }
 
+ins_left {
+  function()
+    if vim.bo.filetype == "python" then
+      local venv = os.getenv "CONDA_DEFAULT_ENV"
+    if venv then
+      return string.format("  (%s)", env_cleanup(venv))
+    end
+    venv = os.getenv "VIRTUAL_ENV"
+    if venv then
+      return string.format("  (%s)", env_cleanup(venv))
+    end
+    return ""
+  end
+  return ""
+  end,
+  color = { fg = colors.green },
+  cond = conditions.hide_in_width,
+}
+
 -- Insert mid section. You can make any number of sections in neovim :)
 -- for lualine it's any number greater then 2
 
@@ -116,24 +147,31 @@ ins_left {
 }
 
 ins_left {
-  -- Lsp server name .
-  function()
-    local msg = 'No Active Lsp'
-    local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
-    local clients = vim.lsp.get_active_clients()
-    if next(clients) == nil then
+   function(msg)
+    msg = msg or "LS Inactive"
+    local buf_clients = vim.lsp.buf_get_clients()
+    if next(buf_clients) == nil then
+      -- TODO: clean up this if statement
+      if type(msg) == "boolean" or #msg == 0 then
+        return "LS Inactive"
+      end
       return msg
     end
-    for _, client in ipairs(clients) do
-      local filetypes = client.config.filetypes
-      if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-        return client.name
+    local buf_ft = vim.bo.filetype
+    local buf_client_names = {}
+
+    -- add client
+    for _, client in pairs(buf_clients) do
+      if client.name ~= "null-ls" then
+        table.insert(buf_client_names, client.name)
       end
     end
-    return msg
+
+    return table.concat(buf_client_names, ", ")
   end,
-  icon = "  LSP:",
-  color = { fg = colors.cyan, gui = 'bold' },
+  -- icon = " ",
+  icon = "  ",
+  color = { gui = "bold", fg= colors.green},
 }
 
 -- Add components to right sections
@@ -173,11 +211,17 @@ ins_right {
 
 ins_right {
   function()
-    return '▊'
-  end,
-  color = { fg = colors.blue },
-  padding = { left = 1 },
-}
+        local current_line = vim.fn.line "."
+        local total_lines = vim.fn.line "$"
+        local chars = { "__", "▁▁", "▂▂", "▃▃", "▄▄", "▅▅", "▆▆", "▇▇", "██" }
+        local line_ratio = current_line / total_lines
+        local index = math.ceil(line_ratio * #chars)
+        return chars[index]
+      end,
+      padding = { left = 0, right = 0 },
+      color = { fg = colors.yellow, bg = colors.bg },
+      cond = nil,
+  }
 
 -- Now don't forget to initialize lualine
 require("lualine").setup(config)
