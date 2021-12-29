@@ -117,6 +117,9 @@ return packer.startup(function(use)
   use "Pocco81/DAPInstall.nvim"
   use "mfussenegger/nvim-dap"
   use "rcarriga/nvim-dap-ui"
+  -- oter themes
+  use "VSNeoVim/onedarkest"
+  use "VSNeoVim/Darkup"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
