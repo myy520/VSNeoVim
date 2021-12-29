@@ -4,6 +4,8 @@ local VisualStudioNeovim = {
   keymaps = "VisualStudioNeovim.Core.keymaps",
   plugins = "VisualStudioNeovim.Core.plugins",
   cursor = "VisualStudioNeovim.Core.cursor",
+}
+local Configs = {
   -- Configs
   FileExplorer = "VisualStudioNeovim.Configs.FileExplorer",
   BufferLine = "VisualStudioNeovim.Configs.BufferLine",
@@ -28,5 +30,8 @@ local VisualStudioNeovim = {
 }
 
 for k,v in pairs(VisualStudioNeovim) do
+  require(v)
+end
+for k,v in pairs(Configs) do
   require(v)
 end
