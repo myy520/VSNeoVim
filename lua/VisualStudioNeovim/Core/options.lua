@@ -37,10 +37,10 @@ local optionsconfig = {
 }
 local globalconfig = {
   -- onedark
-  -- colors_name = 'onedark',
-  -- onedark_style = 'deep',
+  colors_name = 'onedark',
+  onedark_style = 'deep',
   -- darkup
-  colors_name = 'darkup',
+  -- colors_name = 'darkup',
   -- onedarkest
   -- colors_name = 'onedarkest'
 }
