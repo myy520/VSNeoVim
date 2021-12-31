@@ -118,25 +118,6 @@ ins_left {
   }
 }
 
-ins_left {
-  function()
-    if vim.bo.filetype == "python" then
-      local venv = os.getenv "CONDA_DEFAULT_ENV"
-    if venv then
-      return string.format("  (%s)", env_cleanup(venv))
-    end
-    venv = os.getenv "VIRTUAL_ENV"
-    if venv then
-      return string.format("  (%s)", env_cleanup(venv))
-    end
-    return ""
-  end
-  return ""
-  end,
-  color = { fg = colors.green },
-  cond = conditions.hide_in_width,
-}
-
 -- Insert mid section. You can make any number of sections in neovim :)
 -- for lualine it's any number greater then 2
 
@@ -174,6 +155,25 @@ ins_left {
   color = { gui = "bold", fg= colors.green},
 }
 
+ins_right {
+  function()
+    if vim.bo.filetype == "python" then
+      local venv = os.getenv "CONDA_DEFAULT_ENV"
+    if venv then
+      return string.format("  (%s)", env_cleanup(venv))
+    end
+    venv = os.getenv "VIRTUAL_ENV"
+    if venv then
+      return string.format("  (%s)", env_cleanup(venv))
+    end
+    return ""
+  end
+  return ""
+  end,
+  color = { fg = colors.green },
+  cond = conditions.hide_in_width,
+}
+
 -- Add components to right sections
 ins_right {
   'diff',
@@ -187,7 +187,6 @@ ins_right {
 }
 
 ins_right { 'location',  color = { fg = colors.yellow, gui = 'bold' } }
-ins_right { 'progress', color = { fg = colors.yellow, gui = 'bold' } }
 
 ins_right {
   'filetype',
