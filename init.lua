@@ -27,6 +27,7 @@ local Configs = {
   Gitsigns = "VisualStudioNeovim.Configs.Gitsigns",
   SymbolsOutline = "VisualStudioNeovim.Configs.SymbolsOutline",
   DAP = "VisualStudioNeovim.Configs.DAP",
+  LazyGit = "VisualStudioNeovim.Configs.LazyGit",
 }
 
 for k,v in pairs(VisualStudioNeovim) do
