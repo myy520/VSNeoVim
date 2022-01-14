@@ -16,6 +16,12 @@
 ## Documentation
 You can find all the documentation for VSNeoVim at [wiki](https://github.com/VSNeoVim/VSNeoVim/wiki)
 
+## Installation
+
+'''bash
+wget https://raw.githubusercontent.com/vsneovim/vsneovim/main/utils/install.sh && chmod +xinstall.sh && ./install.sh -i
+'''
+
 ## Requirements
 - neovim 6+
 - lua and luajit
