@@ -17,7 +17,15 @@
 You can find all the documentation for VSNeoVim at [wiki](https://github.com/VSNeoVim/VSNeoVim/wiki)
 
 ## Requirements
-Make sure you have the release version of Neovim (0.6).
+- neovim 6+
+- lua and luajit
+- python 3+
+- npm
+- yarn
+- node
+- python-pip 3+
+- lazygit
+- treesitter
 
 ## Install Language support
 
