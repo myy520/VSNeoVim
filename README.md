@@ -18,9 +18,9 @@ You can find all the documentation for VSNeoVim at [wiki](https://github.com/VSN
 
 ## Installation
 
-'''bash
+```bash
 wget https://raw.githubusercontent.com/vsneovim/vsneovim/main/utils/install.sh && chmod +xinstall.sh && ./install.sh -i
-'''
+```
 
 ## Requirements
 - neovim 6+
