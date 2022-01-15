@@ -109,9 +109,6 @@ function cloning_vsneovim() {
   mv $HOME/.local/share/nvim/ $HOME/.local/share/NVIM_OLD
   git clone https://github.com/VSNeovim/VSNeovim ~/.config/nvim
 }
-function getting_started() {
-  nvim +PackerSync
-}
 function parse_arguments() {
   while [ "$#" -gt 0 ]; do
     case "$1" in
@@ -122,12 +119,10 @@ function parse_arguments() {
       -i | --install)
         installation
         cloning_vsneovim
-        getting_started
         ;;
       -m | --miniinstall)
         miniinstallation
         cloning_vsneovim
-        getting_started
         exit 0
         ;;
       -h | --help)
