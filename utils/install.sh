@@ -65,7 +65,8 @@ function __installing_lua() {
   echo "Would you like to install VSNeovim's lua and luajit ?"
   read -p "[Y]es or [N]o : " answer
   if [[ "$answer" == "Y" || "$answer" == "y" ]]; then
-    $RECOMMEND_INSTALL lua luajit
+    $RECOMMEND_INSTALL luajit
+    $RECOMMEND_INSTALL lua || $RECOMMEND_INSTALL lua5.4
   fi
 }
 function __installing_python() {
