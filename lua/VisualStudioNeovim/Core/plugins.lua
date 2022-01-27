@@ -58,13 +58,13 @@ return packer.startup(function(use)
   use "akinsho/toggleterm.nvim"
   -- Project
   use "ahmedkhalf/project.nvim"
-  -- Impatent
+  -- Speed up neovim startup
   use "lewis6991/impatient.nvim"
   -- IndentLine
   use "lukas-reineke/indent-blankline.nvim"
   -- Alpha
   use "goolord/alpha-nvim"
-  -- This is needed to fix lsp doc highlight
+  -- This is needed to fix lsp doc highlighting
   use "antoinemadec/FixCursorHold.nvim"
   -- WhichKey
   use "folke/which-key.nvim"
@@ -84,7 +84,7 @@ return packer.startup(function(use)
   use "L3MON4D3/LuaSnip"
   -- A bunch of snippet to use
   use "rafamadriz/friendly-snippets"
-  -- Language Server Protocole
+  -- Language Server Protocol
   use "neovim/nvim-lspconfig"
   -- Installing language Server
   use "williamboman/nvim-lsp-installer"
@@ -98,7 +98,7 @@ return packer.startup(function(use)
   use { "tzachar/cmp-tabnine", run="./install.sh"}
   -- Tagbar
   use "simrat39/symbols-outline.nvim"
-  -- Notification
+  -- Notifications
   use "rcarriga/nvim-notify"
   -- Maximizer
   use "szw/vim-maximizer"
