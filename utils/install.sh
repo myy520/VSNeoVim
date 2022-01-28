@@ -8,7 +8,7 @@ function usage() {
   echo "    -m, --miniinstall                        minimal installation dependencies"
 }
 function dependencies() {
-  echo "Visual Studio NeoVim All dependencies."
+  echo "Visual Studio NeoVim All dependencie:"
   echo ""
   echo "  neovim      "
   echo "  lua         "
@@ -27,7 +27,7 @@ function detect_platform() {
   case "$OS" in
     Linux)
       if [ -f "/etc/arch-release" ] || [ -f "/etc/artix-release" ]; then
-        RECOMMEND_INSTALL="sudo pacman -S"
+        RECOMMEND_INSTALL="sudo pacman -S --noconfirm"
       elif [ -f "/etc/fedora-release" ] || [ -f "/etc/redhat-release" ]; then
         RECOMMEND_INSTALL="sudo dnf install -y"
       elif [ -f "/etc/gentoo-release" ]; then
@@ -49,20 +49,20 @@ function detect_platform() {
       RECOMMEND_INSTALL="brew install"
       ;;
     *)
-      echo "OS $OS is not currently supported."
+      echo "OS :$OS is not currently supported."
       exit 1
       ;;
   esac
 }
 function __installing_neovim() {
-  echo "Would you like to install VSNeovim's neovim ?"
+  echo "Would you like to install neovim ? (Only if you don't have neovim installed)"
   read -p "[Y]es or [N]o : " answer
   if [[ "$answer" == "Y" || "$answer" == "y" ]]; then
     $RECOMMEND_INSTALL neovim
   fi
 }
 function __installing_lua() {
-  echo "Would you like to install VSNeovim's lua and luajit ?"
+  echo "Would you like to install lua and luajit ? (Only if you don't have lua and luaJIT installed)"
   read -p "[Y]es or [N]o : " answer
   if [[ "$answer" == "Y" || "$answer" == "y" ]]; then
     $RECOMMEND_INSTALL luajit
@@ -70,21 +70,21 @@ function __installing_lua() {
   fi
 }
 function __installing_python() {
-  echo "Would you like to install VSNeovim's python ?"
+  echo "Would you like to install neovim's python librarys ? (Recomended , install only if pynvim is NOT installed)"
   read -p "[Y]es or [N]o : " answer
   if [[ "$answer" == "Y" || "$answer" == "y" ]]; then
     python3 -m pip install pynvim
   fi
 }
 function __installing_node() {
-  echo "Would you like to install VSNeovim's node ?"
+  echo "Would you like to install node ?"
   read -p "[Y]es or [N]o : " answer
   if [[ "$answer" == "Y" || "$answer" == "y" ]]; then
     $RECOMMEND_INSTALL nodejs npm yarn
   fi
 }
 function __installing_utils() {
-  echo "Would you like to install VSNeovim's utils (treesitter and lazygit) ?"
+  echo "Would you like to install some recomended utilities ? (treesitter and lazygit) "
   read -p "[Y]es or [N]o : " answer
   if [[ "$answer" == "Y" || "$answer" == "y" ]]; then
     $RECOMMEND_INSTALL lazygit  tree-sitter
@@ -109,6 +109,7 @@ function cloning_vsneovim() {
   mv $HOME/.config/nvim/ $HOME/.config/NVIM_OLD
   mv $HOME/.local/share/nvim/ $HOME/.local/share/NVIM_OLD
   git clone https://github.com/VSNeovim/VSNeovim ~/.config/nvim
+  echo "done cloning !"
 }
 function parse_arguments() {
   while [ "$#" -gt 0 ]; do
