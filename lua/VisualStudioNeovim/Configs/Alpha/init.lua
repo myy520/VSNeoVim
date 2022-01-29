@@ -26,9 +26,9 @@ dashboard.section.buttons.val = {
 	dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
 	dashboard.button("t", "  Find text", ":Telescope live_grep <CR>"),
 	dashboard.button("m", "  Bookmarks", ":Telescope marks <CR>"),
-  	dashboard.button("e", "  Extensions ", ":e ~/.config/nvim/lua/VisualStudioNeovim/Core/plugins.lua<CR>"),
+ 	dashboard.button("e", "  Extensions ", ":e ~/.config/nvim/lua/VisualStudioNeovim/Core/plugins.lua<CR>"),
 	dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
-	dashboard.button("c", "  Configuration", ":e ~/.config/nvim/lua/VisualStudioNeovim/Core/options.lua<CR>"),
+	dashboard.button("c", "  Configuration", ":e ~/.config/nvim/lua/VisualStudioNeovim/<CR>"),
 	dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
 }
 
