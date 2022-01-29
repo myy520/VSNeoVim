@@ -13,15 +13,12 @@ end
 local dashboard = require("alpha.themes.dashboard")
 dashboard.section.header.val = {
   '',
-  '',
-  '888     888  .d8888b.  888b    888                  888     888 d8b               ',
-  '888     888 d88P  Y88b 8888b   888                  888     888 Y8P               ',
-  '888     888 Y88b.      88888b  888                  888     888                   ',
-  'Y88b   d88P  "Y888b.   888Y88b 888  .d88b.   .d88b. Y88b   d88P 888 88888b.d88b.  ',
-  ' Y88b d88P      "Y88b. 888 Y88b888 d8P  Y8b d88""88b Y88b d88P  888 888 "888 "88b ',
-  '  Y88o88P         "888 888  Y88888 88888888 888  888  Y88o88P   888 888  888  888 ',
-  '   Y888P    Y88b  d88P 888   Y8888 Y8b.     Y88..88P   Y888P    888 888  888  888 ',
-  '    Y8P      "Y8888P"  888    Y888  "Y8888   "Y88P"     Y8P     888 888  888  888 ',
+  'db    db .d8888.     d8b   db d88888b  .d88b.  db    db d888888b .88b  d88. ',
+  "88    88 88'  YP     888o  88 88'     .8P  Y8. 88    88   `88'   88'YbdP`88 ",
+  'Y8    8P `8bo.       88V8o 88 88ooooo 88    88 Y8    8P    88    88  88  88 ',
+  "`8b  d8'   `Y8b.     88 V8o88 88~~~~~ 88    88 `8b  d8'    88    88  88  88 ",
+  " `8bd8'  db   8D     88  V888 88.     `8b  d8'  `8bd8'    .88.   88  88  88 ",
+  "   YP    `8888Y'     VP   V8P Y88888P  `Y88P'     YP    Y888888P YP  YP  YP ",
 }
 dashboard.section.buttons.val = {
 	dashboard.button("p", "  Find project", ":Telescope projects <CR>"),
