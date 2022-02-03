@@ -41,7 +41,7 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", options)
 -- Code folding
 keymap('n', 'f', 'za', options)
 -- Open Configuration
-keymap('n', '<C-s>', ':e ~/.config/nvim/lua/Core/SuperVim/Options.lua<CR>', options)
+keymap('n', '<C-s>', ':e ~/.config/nvim/lua/<CR>', options)
 -- Home and End
 keymap('n', 'E', '<end>', options)
 keymap('n', 'H', '<home>', options)
