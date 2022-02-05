@@ -52,6 +52,8 @@ return packer.startup(function(use)
   use "kyazdani42/nvim-tree.lua"
   -- BufferLine
   use "akinsho/bufferline.nvim"
+  -- Buffer delete commands
+  use "famiu/bufdelete.nvim"
   -- LuaLine ( status bar )
   use "nvim-lualine/lualine.nvim"
   -- Terminal
