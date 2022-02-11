@@ -60,6 +60,7 @@ function __installing_neovim() {
   if [[ "$answer" == "Y" || "$answer" == "y" ]]; then
     $RECOMMEND_INSTALL neovim
   fi
+  echo ""
 }
 function __installing_lua() {
   echo "Would you like to install lua and luajit ? (Only if you don't have lua and luaJIT installed)"
@@ -68,6 +69,7 @@ function __installing_lua() {
     $RECOMMEND_INSTALL luajit
     $RECOMMEND_INSTALL lua || $RECOMMEND_INSTALL lua5.4
   fi
+  echo ""
 }
 function __installing_python() {
   echo "Would you like to install neovim's python librarys ? (Recomended , install only if pynvim is NOT installed)"
@@ -75,6 +77,7 @@ function __installing_python() {
   if [[ "$answer" == "Y" || "$answer" == "y" ]]; then
     python3 -m pip install pynvim
   fi
+  echo ""
 }
 function __installing_node() {
   echo "Would you like to install node ?"
@@ -82,6 +85,7 @@ function __installing_node() {
   if [[ "$answer" == "Y" || "$answer" == "y" ]]; then
     $RECOMMEND_INSTALL nodejs npm yarn
   fi
+  echo ""
 }
 function __installing_utils() {
   echo "Would you like to install some recomended utilities ? (treesitter and lazygit) "
@@ -89,6 +93,7 @@ function __installing_utils() {
   if [[ "$answer" == "Y" || "$answer" == "y" ]]; then
     $RECOMMEND_INSTALL lazygit  tree-sitter
   fi
+  echo ""
 }
 function installation() {
   detect_platform
