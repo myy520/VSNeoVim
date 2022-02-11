@@ -19,7 +19,7 @@ You can find all the documentation for VSNeoVim at [wiki](https://github.com/VSN
 ## Installation
 
 ```bash
-wget https://raw.githubusercontent.com/vsneovim/vsneovim/main/utils/install.sh && chmod +x install.sh && ./install.sh -i
+bash <(curl -s https://raw.githubusercontent.com/vsneovim/vsneovim/main/utils/install.sh)
 ```
 
 ## Requirements
