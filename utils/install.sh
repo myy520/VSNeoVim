@@ -163,5 +163,6 @@ function main() {
   parse_arguments "$@"
   logo
   installation
+  cloning_vsneovim
 }
 main "$@"
