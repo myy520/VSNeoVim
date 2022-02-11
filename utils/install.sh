@@ -142,6 +142,6 @@ function done() {
 }
 function main() {
   parse_arguments "$@"
-  usage
+  installation
 }
 main "$@"
