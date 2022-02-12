@@ -31,8 +31,8 @@ local Configs = {
 }
 
 for k,v in pairs(VisualStudioNeovim) do
-  require(v)
+  pcall(require, v)
 end
 for k,v in pairs(Configs) do
-  require(v)
+  pcall(require, v)
 end
