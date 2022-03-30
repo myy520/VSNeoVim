@@ -31,6 +31,8 @@ keymap('n', 'L', ':bn!<CR>', options)
 -- Indentline texts
 keymap('v', '<S-Tab>', '<gv', options)
 keymap('v', '<Tab>', '>gv', options)
+keymap('n', '<S-Tab>', ':<<CR>', options)
+keymap('n', '<Tab>', ':><CR>', options)
 -- Move text up and down
 keymap("v", "<A-j>", ":m .+1<CR>==", options)
 keymap("v", "<A-k>", ":m .-2<CR>==", options)
