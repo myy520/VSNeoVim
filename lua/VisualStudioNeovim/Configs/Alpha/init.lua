@@ -28,7 +28,7 @@ dashboard.section.buttons.val = {
 	dashboard.button("m", "  Bookmarks", ":Telescope marks <CR>"),
  	dashboard.button("e", "  Extensions ", ":e ~/.config/nvim/lua/VisualStudioNeovim/Core/plugins.lua<CR>"),
 	dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
-	dashboard.button("c", "  Configuration", ":e ~/.config/nvim/lua/VisualStudioNeovim/<CR>"),
+	dashboard.button("c", "  Configuration", ":NvimTreeOpen ~/.config/nvim/lua/VisualStudioNeovim/<CR>"),
 	dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
 }
 
