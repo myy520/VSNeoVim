@@ -36,13 +36,8 @@ local optionsconfig = {
   background = 'dark',
 }
 local globalconfig = {
-  -- onedark
-  colors_name = 'onedark',
-  onedark_style = 'deep',
-  -- darkup
-  -- colors_name = 'darkup',
-  -- onedarkest
-  -- colors_name = 'onedarkest'
+  colors_name = 'Darkup',
+  Darkup_style = "dark",
 }
 
 for k, v in pairs(globalconfig) do
