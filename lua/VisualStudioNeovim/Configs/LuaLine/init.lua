@@ -98,8 +98,8 @@ ins_left {
   symbols = { error = ' ', warn = ' ', info = ' ' },
   sources = { "nvim_diagnostic" },
 	sections = { "error", "warn", "info", "hint"},
-	update_in_insert = false,
-	always_visible = true,
+	update_in_insert = true,
+	always_visible = false,
 }
 
 ins_left {
