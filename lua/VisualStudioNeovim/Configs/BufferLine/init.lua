@@ -7,7 +7,7 @@ require("bufferline").setup({
     right_trunc_marker = "",
     show_close_icon = true,
     show_tab_indicators = true,
-    indicator_icon = " ",
+    indicator_icon = "│ ",
     buffer_close_icon = '',
     modified_icon = "●",
   },
