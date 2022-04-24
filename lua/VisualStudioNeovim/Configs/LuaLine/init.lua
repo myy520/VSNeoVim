@@ -1,14 +1,6 @@
 local colors = {
-    bg = "#283347",
+    bg = "#117DC6",
     fg = "#ffffff",
-    blue = "#51afef",
-    yellow = "#e0af68",
-    cyan = "#00b4b4",
-    darkblue = "#081633",
-    green = "#10B981",
-    orange = "#FF8800",
-    magenta = "#c678dd",
-    red = "#db4b4b",
 }
 
 function env_cleanup(venv)
@@ -40,7 +32,7 @@ local config = {
     -- Disable sections and component separators
     component_separators = '',
     section_separators = '',
-    disabled_filetypes = {"NvimTree", "alpha", "statify", "dashboard"},
+    disabled_filetypes = {"NvimTree", "alpha", "statify", "dashboard", "Outline"},
     theme = {
       -- We are going to use lualine_c an lualine_x as left and
       -- right section. Both are highlighted by c theme .  So we
@@ -79,66 +71,45 @@ local function ins_right(component)
   table.insert(config.sections.lualine_x, component)
 end
 
-ins_left {
-  function()
-    return '▊'
-  end,
-  color = { fg = colors.blue }, -- Sets highlighting of component
-  padding = { left = 0, right = 1 }, -- We don't need space before this
-}
+-- ins_left {
+--   function()
+--     return '▊'
+--   end,
+--   color = { fg = colors.blue }, -- Sets highlighting of component
+--   padding = { left = 0, right = 1 }, -- We don't need space before this
+-- }
 
 ins_left {
   'branch',
-  icon = '',
-  color = { fg = colors.magenta, gui = 'bold' },
+  icon = '',
+  color = { fg = colors.fg, gui = 'bold' },
 }
 
+-- Add components to right sections
 ins_left {
-  'diagnostics',
-  symbols = { error = ' ', warn = ' ', info = ' ' },
-  sources = { "nvim_diagnostic" },
-	sections = { "error", "warn", "info", "hint"},
-	update_in_insert = true,
-	always_visible = false,
-}
-
-ins_left {
-  'filename',
-  cond = conditions.buffer_not_empty,
-  color= { fg = colors.magenta },
-}
-
-ins_left {
-  "mode",
-  fmt = function(str)
-    return "-- " .. str .. " --"
-  end,
-  color = {
-    fg = colors.blue,
-  }
-}
-
--- Insert mid section. You can make any number of sections in neovim :)
--- for lualine it's any number greater then 2
-
-ins_left {
-  function()
-    return '%='
-  end,
+  'diff',
+  -- Is it me or the symbol for modified us really weird
+  symbols = { added = ' ', modified = '柳', removed = ' ' },
+  diff_color = {
+    added = { fg = colors.fg },
+    modified = { fg = colors.fg },
+    removed = { fg = colors.fg },
+  },
 }
 
 ins_left {
    function(msg)
-    msg = msg or "LS Inactive"
+    msg = msg or " Inactive"
     local buf_clients = vim.lsp.buf_get_clients()
     if next(buf_clients) == nil then
       -- TODO: clean up this if statement
       if type(msg) == "boolean" or #msg == 0 then
-        return "LS Inactive"
+        return " Inactive"
       end
       return msg
+    else
+      return "﫟"
     end
-    local buf_ft = vim.bo.filetype
     local buf_client_names = {}
 
     -- add client
@@ -150,12 +121,10 @@ ins_left {
 
     return table.concat(buf_client_names, ", ")
   end,
-  -- icon = " ",
-  icon = "  ",
-  color = { gui = "bold", fg= colors.green},
+  color = { gui = "bold", fg= colors.fg},
 }
 
-ins_right {
+ins_left {
   function()
     if vim.bo.filetype == "python" then
       local venv = os.getenv "CONDA_DEFAULT_ENV"
@@ -170,57 +139,99 @@ ins_right {
   end
   return ""
   end,
-  color = { fg = colors.green },
+  color = { fg = colors.fg },
   cond = conditions.hide_in_width,
 }
 
--- Add components to right sections
-ins_right {
-  'diff',
-  -- Is it me or the symbol for modified us really weird
-  symbols = { added = ' ', modified = '柳', removed = ' ' },
-  diff_color = {
-    added = { fg = colors.green },
-    modified = { fg = colors.orange },
-    removed = { fg = colors.red },
+
+ins_left {
+  'diagnostics',
+  symbols = { error = ' ', warn = ' ', info = ' ' },
+  diagnostics_color = {
+    error = {fg= colors.fg},
+    warn  = {fg= colors.fg},
+    info  = {fg= colors.fg},
+    hint  = {fg= colors.fg},
   },
+  sources = { "nvim_diagnostic" },
+	sections = { "error", "warn", "info", "hint"},
+	update_in_insert = true,
+	always_visible = false,
 }
 
-ins_right { 'location',  color = { fg = colors.yellow, gui = 'bold' } }
+ins_left {
+  "mode",
+  fmt = function(str)
+    return "-- " .. str .. " --"
+  end,
+  color = {
+    fg = colors.fg,
+  }
+}
+
+-- Insert mid section. You can make any number of sections in neovim :)
+-- for lualine it's any number greater then 2
+
+ins_left {
+  function()
+    return '%='
+  end,
+}
+
+
 
 ins_right {
-  'filetype',
-  icons_enabled = true,
+  'location',
+  fmt = function(str)
+    return "Ln:" .. string.sub(str, 1, 3) .. "," .. "Col:" .. string.sub(str, 5)
+  end,
+  color = { fg = colors.fg, gui = 'bold' },
+
 }
+
+ins_right {
+  function()
+    return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
+  end
+}
+
 
 ins_right {
   'o:encoding', -- option component same as &encoding in viml
   fmt = string.upper, -- I'm not sure why it's upper case either ;)
   cond = conditions.hide_in_width,
-  color = { fg = colors.green, gui = 'bold' },
-}
-
-ins_right {
-  'fileformat',
-  fmt = string.upper,
-  icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
-  color = { fg = colors.green, gui = 'bold' },
+  color = { fg = colors.fg, gui = 'bold' },
 }
 
 
 ins_right {
-  function()
-        local current_line = vim.fn.line "."
-        local total_lines = vim.fn.line "$"
-        local chars = { "__", "▁▁", "▂▂", "▃▃", "▄▄", "▅▅", "▆▆", "▇▇", "██" }
-        local line_ratio = current_line / total_lines
-        local index = math.ceil(line_ratio * #chars)
-        return chars[index]
-      end,
-      padding = { left = 0, right = 0 },
-      color = { fg = colors.yellow, bg = colors.bg },
-      cond = nil,
-  }
+   function(msg)
+    msg = msg or ""
+    local buf_clients = vim.lsp.buf_get_clients()
+    if next(buf_clients) == nil then
+      if type(msg) == "boolean" or #msg == 0 then
+        return ""
+      end
+      return msg
+    end
+    local buf_client_names = {}
+
+    -- add client
+    for _, client in pairs(buf_clients) do
+      if client.name ~= "null-ls" then
+        table.insert(buf_client_names, client.name)
+      end
+    end
+
+    return table.concat(buf_client_names, ", ")
+  end,
+  color = { gui = "bold", fg= colors.fg},
+}
+
+ins_right {
+  'filetype',
+  icons_enabled = false,
+}
 
 -- Now don't forget to initialize lualine
 require("lualine").setup(config)
