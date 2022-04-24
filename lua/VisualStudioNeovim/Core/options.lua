@@ -34,7 +34,7 @@ local optionsconfig = {
   scrolloff = 8,
   sidescrolloff = 8,
   background = 'dark',
-  cmdheight = 1,
+  cmdheight = 2,
 }
 local globalconfig = {
   colors_name = 'Darkup',
