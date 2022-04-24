@@ -116,7 +116,7 @@ return packer.startup(function(use)
   -- git signs
   use "lewis6991/gitsigns.nvim"
   -- debugging
-  use "Pocco81/DAPInstall.nvim"
+  use "ttbug/DAPInstall.nvim"
   use "mfussenegger/nvim-dap"
   use "rcarriga/nvim-dap-ui"
   -- theming
