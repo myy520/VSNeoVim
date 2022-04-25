@@ -34,7 +34,7 @@ dashboard.section.buttons.val = {
 	dashboard.button("p", "  Recent Projects", ":Telescope projects <CR>"),
 	dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
 	dashboard.button("t", "  Find Text", ":Telescope live_grep <CR>"),
-	dashboard.button("c", "  Configuration", ":edit ~/.config/nvim/lua/VisualStudioNeovim/<CR>"),
+	dashboard.button("c", "  Configuration", ":NvimTreeOpen ~/.config/nvim/lua/VisualStudioNeovim/<CR>"),
 }
 
 dashboard.section.header.opts.hl = "Include"
