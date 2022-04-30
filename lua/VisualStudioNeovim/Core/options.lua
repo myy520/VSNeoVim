@@ -37,10 +37,12 @@ local optionsconfig = {
   cmdheight = vsn.options.cmdline,
 }
 local globalconfig = {
-  colors_name = 'Darkup',
-  Darkup_style = "dark",
+  colors_name = vsn.options.theme,
 }
 
+for k, v in pairs(vsn.options) do
+  GLOBAL[k] = v
+end 
 for k, v in pairs(globalconfig) do
   GLOBAL[k] = v
 end
