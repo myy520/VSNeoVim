@@ -34,5 +34,6 @@ vsn = {
     background = 'dark',
     cmdheight = 2,
     theme = 'Darkup',
+    Darkup_style = "dark",
   }
 }
