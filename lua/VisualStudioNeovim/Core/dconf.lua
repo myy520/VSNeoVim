@@ -1,7 +1,7 @@
-vsn = {}
-
 vsn.options = {
   backup = false,
+  title = true,
+  titlestring = "VSNeoVim",
   clipboard = 'unnamedplus',
   completeopt = { "menuone", "noselect" },
   conceallevel = 0,
