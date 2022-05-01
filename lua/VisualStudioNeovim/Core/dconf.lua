@@ -36,5 +36,9 @@ vsn = {
   global = {
     theme = 'Darkup',
     Darkup_style = "dark",
-  }
+  },
+  keybindings = {
+    localleader = " ",
+    leader = " ",
+  },
 }
