@@ -45,16 +45,57 @@ You can find all the documentation for VSNeoVim at [wiki](https://github.com/VSN
 bash <(curl -s https://raw.githubusercontent.com/vsneovim/vsneovim/main/utils/install.sh)
 ```
 
-## Requirements
-- neovim 6+
-- lua and luajit
-- python 3+
-- npm
-- yarn
-- node
-- python-pip 3+
-- lazygit
-- treesitter
+## Configuration file
+To install plugins configure VSNeoVim use the `config.lua` located here: `~/.config/VSN/config.lua`
+
+Example : 
+
+```lua
+vsn = {
+  options = {
+    backup = false,
+    title = true,
+    titlestring = "VSNeoVim",
+    clipboard = 'unnamedplus',
+    completeopt = { "menuone", "noselect" },
+    conceallevel = 0,
+    fileencoding = 'utf-8',
+    hlsearch = true,
+    ignorecase = true,
+    mouse = 'a',
+    pumheight = 10,
+    showmode = false,
+    showtabline = 2,
+    smartcase = true,
+    smartindent = true,
+    splitbelow = true,
+    splitright = true,
+    swapfile = false,
+    timeoutlen = 100,
+    undofile = true,
+    updatetime = 300,
+    writebackup = false,
+    expandtab = true,
+    shiftwidth = 2,
+    tabstop = 2,
+    cursorline = true,
+    number = true,
+    relativenumber = false,
+    numberwidth = 4,
+    signcolumn = 'yes',
+    wrap = false,
+    scrolloff = 8,
+    sidescrolloff = 8,
+    background = 'dark',
+    cmdheight = 2,
+  },
+  global = {
+    theme = 'Darkup',
+    Darkup_style = "dark",
+  }
+}
+```
+
 
 ## Install Language support
 
