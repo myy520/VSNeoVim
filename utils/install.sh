@@ -140,11 +140,6 @@ function parse_arguments() {
     shift
   done
 }
-function done() {
-  echo "Installing :"
-  echo "  dependencies ( ./install.sh -d )"
-  echo "Thank you for installing Visual Studio NeoVim :)"
-}
 function logo(){
   cat <<'EOF'
     
