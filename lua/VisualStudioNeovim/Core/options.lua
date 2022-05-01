@@ -3,10 +3,10 @@ local GLOBAL = vim.g
 
 local optionsconfig = {
   backup = vsn.options.backup,
-  title = vsn.options.title,
-  titlestring = vsn.options.titlestring,
-  clipboard = vsn.options.clipboard,
-  completeopt = vsn.options.completeopt,
+  title = true,
+  titlestring = "VSNeoVim",
+  clipboard = "unnamedplus",
+  completeopt = { "menuone", "noselect" },
   conceallevel = vsn.options.conceallevel,
   fileencoding = vsn.options.fileencoding,
   hlsearch = vsn.options.hlsearch,
