@@ -3,6 +3,8 @@ local GLOBAL = vim.g
 
 local optionsconfig = {
   backup = vsn.options.backup,
+  title = vsn.options.title,
+  titlestring = vsn.options.titlestring,
   clipboard = vsn.options.clipboard,
   completeopt = vsn.options.completeopt,
   conceallevel = vsn.options.conceallevel,
