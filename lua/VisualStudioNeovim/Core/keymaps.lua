@@ -2,8 +2,8 @@ local keymap = vim.api.nvim_set_keymap
 local options = { noremap = true, silent = true }
 
 keymap("", "<Space>", "<Nop>", options)
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.mapleader = vsn.keybindings.leader
+vim.g.maplocalleader = vsn.keybindings.localleader
 
 -- Modes
 --   normal_mode = 'n',
