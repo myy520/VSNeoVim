@@ -29,12 +29,12 @@ dashboard.section.header.val = {
   "    YP    `8888Y'   VP   V8P Y88888P  `Y88P'     YP    Y888888P YP  YP  YP ",
 }
 dashboard.section.buttons.val = {
-	dashboard.button("n", "  New File", ":ene <BAR> startinsert <CR>"),
-	dashboard.button("f", "  Find File", ":Telescope find_files <CR>"),
-	dashboard.button("p", "  Recent Projects", ":Telescope projects <CR>"),
-	dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
-	dashboard.button("t", "  Find Text", ":Telescope live_grep <CR>"),
-	dashboard.button("c", "  Configuration", ":NvimTreeOpen ~/.config/nvim/lua/VisualStudioNeovim/<CR>"),
+	dashboard.button("SPC n", "  New File", ":ene <BAR> startinsert <CR>"),
+	dashboard.button("SPC f", "  Find File", ":Telescope find_files <CR>"),
+	dashboard.button("SPC p", "  Recent Projects", ":Telescope projects <CR>"),
+	dashboard.button("SPC r", "  Recently used files", ":Telescope oldfiles <CR>"),
+	dashboard.button("SPC t", "  Find Text", ":Telescope live_grep <CR>"),
+	dashboard.button("SPC c", "  Configuration", ":NvimTreeOpen ~/.config/nvim/lua/VisualStudioNeovim/<CR>"),
 }
 
 dashboard.section.header.opts.hl = "Include"
