@@ -37,6 +37,7 @@ dashboard.section.buttons.val = {
 	dashboard.button("SPC c", "  Configuration", ":NvimTreeOpen ~/.config/nvim/lua/VisualStudioNeovim/<CR>"),
 }
 
+dashboard.section.footer.opts.hl = "Type"
 dashboard.section.header.opts.hl = "Include"
 dashboard.section.buttons.opts.hl = "Keyword"
 
