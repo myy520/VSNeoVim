@@ -1,5 +1,7 @@
 local fn = vim.fn
 
+require("VisualStudioNeovim.Core.utils")
+
 -- Automatically install packer
 local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -19,7 +21,9 @@ end
 vim.cmd [[
   augroup packer_user_config
     autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
+    autocmd BufWritePost plugins.lua source <afile> | source ~/.config/nvim/lua/VisualStudioNeovim/Core/plugins.lua | PackerSync
+    autocmd BufWritePost config.lua source <afile> | source ~/.config/nvim/lua/VisualStudioNeovim/Core/plugins.lua | PackerSync
+    autocmd BufWritePost dconf.lua source <afile> | source ~/.config/nvim/lua/VisualStudioNeovim/Core/plugins.lua | PackerSync
   augroup end
 ]]
 
@@ -123,6 +127,10 @@ return packer.startup(function(use)
   use "VSNeoVim/Darkup.nvim"
   -- lazygit
   use "kdheepak/lazygit.nvim"
+
+  for _, extension in pairs(vsn.extensions) do
+    use(extension)
+  end
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
