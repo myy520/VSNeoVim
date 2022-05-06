@@ -31,8 +31,9 @@ local Configs = {
 }
 
 
-require("VisualStudioNeovim.Core.utils")
 require("VisualStudioNeovim.Core.dconf")
+require("VisualStudioNeovim.Core.utils")
+
 for _,v in pairs(VisualStudioNeovim) do
   pcall(require, v)
 end
