@@ -1,7 +1,6 @@
 vsn = {
   options = {
     backup = false,
-    completeopt = { "menuone", "noselect" },
     conceallevel = 0,
     fileencoding = 'utf-8',
     hlsearch = true,
