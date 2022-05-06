@@ -40,4 +40,6 @@ vsn = {
     localleader = " ",
     leader = " ",
   },
+  extensions = {
+  },
 }
