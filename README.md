@@ -94,7 +94,8 @@ vsn = {
     leader = " ",
   },
   extensions = {
-    {"projekt0n/github-nvim-theme"},
+    -- adding your extensions with this template
+    -- {"url", run="", config="", etc...}
   },
 }
 ```
