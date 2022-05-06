@@ -93,6 +93,9 @@ vsn = {
     localleader = " ",
     leader = " ",
   },
+  extensions = {
+    {"projekt0n/github-nvim-theme"},
+  },
 }
 ```
 
