@@ -43,5 +43,6 @@ vsn = {
   extensions = {
     -- adding your extensions with this template
     -- {"url", run="", config="", etc...}
+    {"VSNeoVim/Darkup.nvim"}
   },
 }
