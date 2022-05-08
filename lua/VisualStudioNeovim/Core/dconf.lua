@@ -58,5 +58,6 @@ vsn = {
     Telescope = {enabled = true},
     Colorizer = {enabled = true},
     Tabnine = {enabled = true},
+    Treesitter = {enabled = true},
   }
 }
