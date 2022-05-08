@@ -128,7 +128,7 @@ return packer.startup(function(use)
   use {"mfussenegger/nvim-dap", disable = not is_enabled("DAP")}
   use {"rcarriga/nvim-dap-ui", disable = not is_enabled("DAPUI")}
   -- lazygit
-  use "kdheepak/lazygit.nvim"
+  use {"kdheepak/lazygit.nvim", disable = not is_enabled("GitUi")}
 
   for _, extension in pairs(vsn.extensions) do
     use(extension)
