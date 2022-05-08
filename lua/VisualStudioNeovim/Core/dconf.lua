@@ -53,5 +53,6 @@ vsn = {
     IndentLine = {enabled = true},
     WhichKey = {enabled = true},
     CMP = {enabled = true},
+    LSP = {enabled = true},
   }
 }
