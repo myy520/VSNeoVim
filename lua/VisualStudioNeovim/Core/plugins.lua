@@ -79,7 +79,7 @@ return packer.startup(function(use)
   -- WhichKey
   use {"folke/which-key.nvim", disable = not is_enabled("WhichKey")}
   -- AutoCompletion with cmp
-  use "hrsh7th/nvim-cmp"
+  use {"hrsh7th/nvim-cmp", disable = not is_enabled("CMP")}
   -- Buffer Completions
   use "hrsh7th/cmp-buffer"
   -- Path Completions
