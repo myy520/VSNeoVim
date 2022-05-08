@@ -101,7 +101,7 @@ return packer.startup(function(use)
   -- For formatters and linters
   use "jose-elias-alvarez/null-ls.nvim"
   -- Telescope
-  use "nvim-telescope/telescope.nvim"
+  use {"nvim-telescope/telescope.nvim", disable = not is_enabled("Telescope")}
   -- Neovim Colorizer
   use "norcalli/nvim-colorizer.lua"
   -- Tabnine cmp
