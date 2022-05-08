@@ -95,7 +95,7 @@ return packer.startup(function(use)
   -- A bunch of snippet to use
   use "rafamadriz/friendly-snippets"
   -- Language Server Protocol
-  use "neovim/nvim-lspconfig"
+  use {"neovim/nvim-lspconfig", disable = not is_enabled("LSP")}
   -- Installing language Server
   use "williamboman/nvim-lsp-installer"
   -- For formatters and linters
