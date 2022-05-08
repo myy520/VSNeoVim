@@ -59,7 +59,7 @@ return packer.startup(function(use)
   -- File Browser
   use {"kyazdani42/nvim-tree.lua", disable = not is_enabled("FileExplorer")}
   -- BufferLine
-  use "akinsho/bufferline.nvim"
+  use {"akinsho/bufferline.nvim", disable = not is_enabled("BufferLine")}
   -- Buffer delete commands
   use "famiu/bufdelete.nvim"
   -- LuaLine ( status bar )
