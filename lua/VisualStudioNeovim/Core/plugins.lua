@@ -103,7 +103,7 @@ return packer.startup(function(use)
   -- Telescope
   use {"nvim-telescope/telescope.nvim", disable = not is_enabled("Telescope")}
   -- Neovim Colorizer
-  use "norcalli/nvim-colorizer.lua"
+  use {"norcalli/nvim-colorizer.lua", disable = not is_enabled("Colorizer")}
   -- Tabnine cmp
   use { "tzachar/cmp-tabnine", run="./install.sh"}
   -- Tagbar
