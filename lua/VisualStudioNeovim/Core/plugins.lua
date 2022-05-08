@@ -97,7 +97,7 @@ return packer.startup(function(use)
   -- Language Server Protocol
   use {"neovim/nvim-lspconfig", disable = not is_enabled("LSP")}
   -- Installing language Server
-  use "williamboman/nvim-lsp-installer"
+  use {"williamboman/nvim-lsp-installer", disable = not is_enabled("LSPInstaller")}
   -- For formatters and linters
   use "jose-elias-alvarez/null-ls.nvim"
   -- Telescope
