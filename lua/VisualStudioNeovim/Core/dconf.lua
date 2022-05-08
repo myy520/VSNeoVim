@@ -45,6 +45,7 @@ vsn = {
     -- {"url", run="", config="", etc...}
   },
   configs = {
-    TreeIcons = {enabled = true}
+    TreeIcons = {enabled = true},
+    FileExplorer = {enabled = true},
   }
 }
