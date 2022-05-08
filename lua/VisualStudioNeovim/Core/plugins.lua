@@ -122,7 +122,7 @@ return packer.startup(function(use)
   -- language server settings defined in json for
   use "tamago324/nlsp-settings.nvim"
   -- git signs
-  use "lewis6991/gitsigns.nvim"
+  use {"lewis6991/gitsigns.nvim", disable = not is_enabled("Git")}
   -- debugging
   use {"ttbug/DAPInstall.nvim", disable = not is_enabled("DAPInstall")}
   use {"mfussenegger/nvim-dap", disable = not is_enabled("DAP")}
