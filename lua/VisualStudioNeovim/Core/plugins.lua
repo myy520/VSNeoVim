@@ -42,6 +42,10 @@ packer.init {
   },
 }
 
+function is_enabled(extension)
+  return vsn.configs[extension].enabled
+end
+
 -- Install your plugins here
 return packer.startup(function(use)
   -- Have packer manage itself
@@ -51,7 +55,7 @@ return packer.startup(function(use)
   -- Useful lua functions used ny lots of plugins
   use "nvim-lua/plenary.nvim"
   -- Icons
-  use "kyazdani42/nvim-web-devicons"
+  use {"kyazdani42/nvim-web-devicons", disable = not is_enabled("TreeIcons")}
   -- File Browser
   use "kyazdani42/nvim-tree.lua"
   -- BufferLine
