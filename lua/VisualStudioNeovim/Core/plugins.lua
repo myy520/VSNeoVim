@@ -77,7 +77,7 @@ return packer.startup(function(use)
   -- This is needed to fix lsp doc highlighting
   use "antoinemadec/FixCursorHold.nvim"
   -- WhichKey
-  use "folke/which-key.nvim"
+  use {"folke/which-key.nvim", disable = not is_enabled("WhichKey")}
   -- AutoCompletion with cmp
   use "hrsh7th/nvim-cmp"
   -- Buffer Completions
