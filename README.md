@@ -96,7 +96,28 @@ vsn = {
   extensions = {
     -- adding your extensions with this template
     -- {"url", run="", config="", etc...}
+    {"VSNeoVim/Darkup.nvim"},
   },
+  configs = {
+    TreeIcons = {enabled = true},
+    FileExplorer = {enabled = true, width = 30, position = "left", icons = true, diagnostics = true, open_file_on_new_tab = false, enable_git = true, hidden_ignore_files = true},
+    BufferLine = {enabled = true},
+    Terminal = {enabled = true},
+    IndentLine = {enabled = true},
+    WhichKey = {enabled = true},
+    CMP = {enabled = true},
+    LSP = {enabled = true},
+    LSPInstaller = {enabled = true},
+    Telescope = {enabled = true},
+    Colorizer = {enabled = true},
+    Tabnine = {enabled = true},
+    Treesitter = {enabled = true},
+    Git = {enabled = true},
+    DAPInstall = {enabled = true},
+    DAP = {enabled = true},
+    DAPUI = {enabled = true},
+    GitUi = {enabled = true},
+  }
 }
 ```
 
