@@ -59,5 +59,6 @@ vsn = {
     Colorizer = {enabled = true},
     Tabnine = {enabled = true},
     Treesitter = {enabled = true},
+    DAPInstall = {enabled = true},
   }
 }
