@@ -165,6 +165,7 @@ function logo(){
        `8b  d8'   `Y8b.   88 V8o88 88~~~~~ 88    88 `8b  d8'    88    88  88  88      
         `8bd8'  db   8D   88  V888 88.     `8b  d8'  `8bd8'    .88.   88  88  88      
           YP    `8888Y'   VP   V8P Y88888P  `Y88P'     YP    Y888888P YP  YP  YP      
+
 EOF
 }
 function main() {
