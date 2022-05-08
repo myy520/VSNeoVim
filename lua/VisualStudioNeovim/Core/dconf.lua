@@ -50,5 +50,6 @@ vsn = {
     BufferLine = {enabled = true},
     Terminal = {enabled = true},
     IndentLine = {enabled = true},
+    WhichKey = {enabled = true},
   }
 }
