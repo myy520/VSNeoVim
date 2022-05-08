@@ -56,5 +56,6 @@ vsn = {
     LSP = {enabled = true},
     LSPInstaller = {enabled = true},
     Telescope = {enabled = true},
+    Colorizer = {enabled = true},
   }
 }
