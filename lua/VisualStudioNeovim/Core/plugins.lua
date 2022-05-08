@@ -105,7 +105,7 @@ return packer.startup(function(use)
   -- Neovim Colorizer
   use {"norcalli/nvim-colorizer.lua", disable = not is_enabled("Colorizer")}
   -- Tabnine cmp
-  use { "tzachar/cmp-tabnine", run="./install.sh"}
+  use { "tzachar/cmp-tabnine", run="./install.sh", disable = not is_enabled("Tabnine")}
   -- Tagbar
   use "simrat39/symbols-outline.nvim"
   -- Notifications
