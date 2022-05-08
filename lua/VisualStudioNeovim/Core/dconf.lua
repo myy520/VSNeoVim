@@ -44,4 +44,7 @@ vsn = {
     -- adding your extensions with this template
     -- {"url", run="", config="", etc...}
   },
+  configs = {
+    TreeIcons = {enabled = true}
+  }
 }
