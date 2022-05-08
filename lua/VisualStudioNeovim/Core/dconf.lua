@@ -60,5 +60,6 @@ vsn = {
     Tabnine = {enabled = true},
     Treesitter = {enabled = true},
     DAPInstall = {enabled = true},
+    DAP = {enabled = true},
   }
 }
