@@ -127,8 +127,6 @@ return packer.startup(function(use)
   use "ttbug/DAPInstall.nvim"
   use "mfussenegger/nvim-dap"
   use "rcarriga/nvim-dap-ui"
-  -- theming
-  use "VSNeoVim/Darkup.nvim"
   -- lazygit
   use "kdheepak/lazygit.nvim"
 
