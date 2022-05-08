@@ -71,7 +71,7 @@ return packer.startup(function(use)
   -- Speed up neovim startup
   use "lewis6991/impatient.nvim"
   -- IndentLine
-  use "lukas-reineke/indent-blankline.nvim"
+  use {"lukas-reineke/indent-blankline.nvim", disable = not is_enabled("IndentLine")}
   -- Alpha
   use "goolord/alpha-nvim"
   -- This is needed to fix lsp doc highlighting
