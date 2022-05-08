@@ -54,5 +54,6 @@ vsn = {
     WhichKey = {enabled = true},
     CMP = {enabled = true},
     LSP = {enabled = true},
+    LSPInstaller = {enabled = true},
   }
 }
