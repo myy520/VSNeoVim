@@ -61,5 +61,6 @@ vsn = {
     Treesitter = {enabled = true},
     DAPInstall = {enabled = true},
     DAP = {enabled = true},
+    DAPUI = {enabled = true},
   }
 }
