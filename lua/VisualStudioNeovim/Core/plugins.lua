@@ -124,7 +124,7 @@ return packer.startup(function(use)
   -- git signs
   use "lewis6991/gitsigns.nvim"
   -- debugging
-  use "ttbug/DAPInstall.nvim"
+  use {"ttbug/DAPInstall.nvim", disable = not is_enabled("DAPInstall")}
   use "mfussenegger/nvim-dap"
   use "rcarriga/nvim-dap-ui"
   -- lazygit
