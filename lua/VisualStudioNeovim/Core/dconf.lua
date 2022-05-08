@@ -59,6 +59,7 @@ vsn = {
     Colorizer = {enabled = true},
     Tabnine = {enabled = true},
     Treesitter = {enabled = true},
+    Git = {enabled = true},
     DAPInstall = {enabled = true},
     DAP = {enabled = true},
     DAPUI = {enabled = true},
