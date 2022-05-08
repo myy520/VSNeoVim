@@ -55,7 +55,10 @@ vsn = {
     CMP = {enabled = true},
     LSP = {enabled = true},
     LSPInstaller = {enabled = true},
+<<<<<<< HEAD
     Telescope = {enabled = true},
     Colorizer = {enabled = true},
+=======
+>>>>>>> 26a19be8478ec31d292994c6a6c976e3b2e10adc
   }
 }
