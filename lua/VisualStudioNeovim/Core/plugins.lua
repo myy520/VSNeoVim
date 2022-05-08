@@ -126,7 +126,7 @@ return packer.startup(function(use)
   -- debugging
   use {"ttbug/DAPInstall.nvim", disable = not is_enabled("DAPInstall")}
   use {"mfussenegger/nvim-dap", disable = not is_enabled("DAP")}
-  use "rcarriga/nvim-dap-ui"
+  use {"rcarriga/nvim-dap-ui", disable = not is_enabled("DAPUI")}
   -- lazygit
   use "kdheepak/lazygit.nvim"
 
