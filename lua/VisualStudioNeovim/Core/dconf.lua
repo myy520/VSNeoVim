@@ -62,5 +62,6 @@ vsn = {
     DAPInstall = {enabled = true},
     DAP = {enabled = true},
     DAPUI = {enabled = true},
+    GitUi = {enabled = true},
   }
 }
