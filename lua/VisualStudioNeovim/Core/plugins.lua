@@ -42,6 +42,10 @@ packer.init {
   },
 }
 
+function is_enabled(extension)
+  return vsn.configs[extension].enabled
+end
+
 -- Install your plugins here
 return packer.startup(function(use)
   -- Have packer manage itself
@@ -51,29 +55,29 @@ return packer.startup(function(use)
   -- Useful lua functions used ny lots of plugins
   use "nvim-lua/plenary.nvim"
   -- Icons
-  use "kyazdani42/nvim-web-devicons"
+  use {"kyazdani42/nvim-web-devicons", disable = not is_enabled("TreeIcons")}
   -- File Browser
-  use "kyazdani42/nvim-tree.lua"
+  use {"kyazdani42/nvim-tree.lua", disable = not is_enabled("FileExplorer")}
   -- BufferLine
-  use "akinsho/bufferline.nvim"
+  use {"akinsho/bufferline.nvim", disable = not is_enabled("BufferLine")}
   -- Buffer delete commands
   use "famiu/bufdelete.nvim"
   -- LuaLine ( status bar )
   use "nvim-lualine/lualine.nvim"
   -- Terminal
-  use "akinsho/toggleterm.nvim"
+  use {"akinsho/toggleterm.nvim", disable = not is_enabled("Terminal")}
   -- Project
   use "ahmedkhalf/project.nvim"
   -- Speed up neovim startup
   use "lewis6991/impatient.nvim"
   -- IndentLine
-  use "lukas-reineke/indent-blankline.nvim"
+  use {"lukas-reineke/indent-blankline.nvim", disable = not is_enabled("IndentLine")}
   -- Alpha
   use "goolord/alpha-nvim"
   -- This is needed to fix lsp doc highlighting
   use "antoinemadec/FixCursorHold.nvim"
   -- WhichKey
-  use "folke/which-key.nvim"
+  use {"folke/which-key.nvim", disable = not is_enabled("WhichKey")}
   -- AutoCompletion with cmp
   use "hrsh7th/nvim-cmp"
   -- Buffer Completions

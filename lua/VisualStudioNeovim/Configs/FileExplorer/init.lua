@@ -42,12 +42,12 @@ nvim_tree.setup {
   ignore_buffer_on_setup = false,
   open_on_setup = false,
   open_on_setup_file = false,
-  open_on_tab = false,
+  open_on_tab = vsn.configs.FileExplorer.open_file_on_new_tab,
   sort_by = "name",
   update_cwd = false,
   view = {
-    width = 30,
-    side = "left",
+    width = vsn.configs.FileExplorer.width,
+    side = vsn.configs.FileExplorer.position,
     preserve_window_proportions = false,
     number = false,
     relativenumber = false,
@@ -71,7 +71,7 @@ nvim_tree.setup {
       },
     },
     icons = {
-      webdev_colors = true,
+      webdev_colors = vsn.configs.FileExplorer.icons,
     },
   },
   hijack_directories = {
@@ -89,7 +89,7 @@ nvim_tree.setup {
     args = {},
   },
   diagnostics = {
-    enable = true,
+    enable = vsn.configs.FileExplorer.diagnostics,
     show_on_dirs = true,
     icons = {
       hint = "",
@@ -104,8 +104,8 @@ nvim_tree.setup {
     exclude = {},
   },
   git = {
-    enable = true,
-    ignore = true,
+    enable = vsn.configs.FileExplorer.enable_git,
+    ignore = vsn.configs.FileExplorer.hidden_ignore_files,
     timeout = 400,
   },
   actions = {
