@@ -46,6 +46,6 @@ vsn = {
   },
   configs = {
     TreeIcons = {enabled = true},
-    FileExplorer = {enabled = true},
+    FileExplorer = {enabled = true, width = 30, position = "left", icons = true, diagnostics = true, open_file_on_new_tab = false, enable_git = true, hidden_ignore_files = true},
   }
 }
