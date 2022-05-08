@@ -57,7 +57,7 @@ return packer.startup(function(use)
   -- Icons
   use {"kyazdani42/nvim-web-devicons", disable = not is_enabled("TreeIcons")}
   -- File Browser
-  use "kyazdani42/nvim-tree.lua"
+  use {"kyazdani42/nvim-tree.lua", disable = not is_enabled("FileExplorer")}
   -- BufferLine
   use "akinsho/bufferline.nvim"
   -- Buffer delete commands
