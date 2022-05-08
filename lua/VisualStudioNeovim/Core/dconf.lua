@@ -52,5 +52,6 @@ vsn = {
     Terminal = {enabled = true},
     IndentLine = {enabled = true},
     WhichKey = {enabled = true},
+    CMP = {enabled = true},
   }
 }
