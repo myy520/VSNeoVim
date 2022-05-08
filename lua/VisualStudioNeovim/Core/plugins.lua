@@ -65,7 +65,7 @@ return packer.startup(function(use)
   -- LuaLine ( status bar )
   use "nvim-lualine/lualine.nvim"
   -- Terminal
-  use "akinsho/toggleterm.nvim"
+  use {"akinsho/toggleterm.nvim", disable = not is_enabled("Terminal")}
   -- Project
   use "ahmedkhalf/project.nvim"
   -- Speed up neovim startup
