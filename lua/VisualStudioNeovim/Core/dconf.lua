@@ -55,5 +55,6 @@ vsn = {
     CMP = {enabled = true},
     LSP = {enabled = true},
     LSPInstaller = {enabled = true},
+    Telescope = {enabled = true},
   }
 }
