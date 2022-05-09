@@ -42,7 +42,7 @@ You can find all the documentation for VSNeoVim at [wiki](https://github.com/VSN
 ## Installation
 
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/vsneovim/vsneovim/main/utils/install.sh)
+bash <(curl -s https://raw.githubusercontent.com/vsneovim/vsneovim/main/utils/installer/install.sh)
 ```
 
 ## Configuration file
