@@ -116,6 +116,10 @@ function cloning_vsneovim() {
   git clone https://github.com/VSNeovim/VSNeovim ~/.config/nvim
   echo "done cloning !"
 }
+function install_binary() {
+  echo "installing binary script ..."
+  curl -s https://raw.githubusercontent.com/vsneovim/vsneovim/main/utils/bin/vsn >> $HOME/.local/bin/vsn
+}
 function parse_arguments() {
   while [ "$#" -gt 0 ]; do
     case "$1" in
