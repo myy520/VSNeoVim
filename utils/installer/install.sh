@@ -122,7 +122,8 @@ function cloning_vsneovim() {
 }
 function install_binary() {
   echo "installing binary script ..."
-  curl -s https://raw.githubusercontent.com/vsneovim/vsneovim/main/utils/bin/vsn >> $HOME/.local/bin/vsn && chmod +x $HOME/.local/bin/vsn
+  curl -s https://raw.githubusercontent.com/vsneovim/vsneovim/main/utils/bin/vsn >> $HOME/.local/bin/vsn
+  chmod +x $HOME/.local/bin/vsn
 }
 function parse_arguments() {
   while [ "$#" -gt 0 ]; do
@@ -180,6 +181,7 @@ function main() {
   parse_arguments "$@"
   logo
   installation
+  install_binary
   cloning_vsneovim
 }
 main "$@"
