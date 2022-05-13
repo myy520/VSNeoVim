@@ -1,4 +1,10 @@
 #!/usr/bin/bash
+VSNEOVIM_BRANCH="main"
+VSNEOVIM_REPOSITORY="https://github.com/VSNeoVim/VSNeoVim"
+VSNEOVIM_RUNTIME_PATH="$HOME/.local/share"
+VSNEOVIM_DIR_NAME="VSNeoVim"
+
+
 function usage() {
   echo "Usage: install.sh [<options>]"
   echo ""
@@ -111,9 +117,7 @@ function miniinstallation() {
 }
 function cloning_vsneovim() {
   echo "cloning VSNeoVim ..."
-  mv $HOME/.config/nvim/ $HOME/.config/NVIM_OLD
-  mv $HOME/.local/share/nvim/ $HOME/.local/share/NVIM_OLD
-  git clone https://github.com/VSNeovim/VSNeovim ~/.config/nvim
+  git clone --branch $VSNEOVIM_BRANCH $VSNEOVIM_REPOSITORY $VSNEOVIM_RUNTIME_PATH/$VSNEOVIM_DIR_NAME
   echo "done cloning !"
 }
 function install_binary() {
