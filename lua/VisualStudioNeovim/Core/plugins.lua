@@ -21,9 +21,9 @@ end
 vim.cmd [[
   augroup packer_user_config
     autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | source ~/.config/nvim/lua/VisualStudioNeovim/Core/plugins.lua | PackerSync
-    autocmd BufWritePost config.lua source <afile> | source ~/.config/nvim/lua/VisualStudioNeovim/Core/plugins.lua | PackerSync
-    autocmd BufWritePost dconf.lua source <afile> | source ~/.config/nvim/lua/VisualStudioNeovim/Core/plugins.lua | PackerSync
+    autocmd BufWritePost plugins.lua source <afile> | source ~/.local/share/VSNeoVim/lua/VisualStudioNeovim/Core/plugins.lua | PackerSync
+    autocmd BufWritePost config.lua source <afile> | source ~/.local/share/VSNeoVim/lua/VisualStudioNeovim/Core/plugins.lua | PackerSync
+    autocmd BufWritePost dconf.lua source <afile> | source ~/.local/share/VSNeoVim/lua/VisualStudioNeovim/Core/plugins.lua | PackerSync
   augroup end
 ]]
 
