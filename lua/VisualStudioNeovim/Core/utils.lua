@@ -1,4 +1,4 @@
-XDG_CFG_HOME = "$HOME/.config/VSN"
+XDG_CFG_HOME = "$HOME/.config/vsn"
 XDG_CFG_DATA = "$HOME/.config/VSNeoVim/data"
 XDG_CFG_CACHE = "$HOME/.config/VSNeoVim/cache"
 
