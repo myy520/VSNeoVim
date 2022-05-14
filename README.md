@@ -46,7 +46,7 @@ bash <(curl -s https://raw.githubusercontent.com/vsneovim/vsneovim/main/utils/in
 ```
 
 ## Configuration file
-To install plugins configure VSNeoVim use the `config.lua` located here: `~/.config/VSN/config.lua`
+To install plugins configure VSNeoVim use the `config.lua` located here: `~/.config/vsn/config.lua`
 
 Example : 
 
