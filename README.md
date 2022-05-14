@@ -43,6 +43,8 @@ You can find all the documentation for VSNeoVim at [wiki](https://github.com/VSN
 
 ## Installation
 
+for install stable release : 
+
 ```bash
 bash <(curl -s https://raw.githubusercontent.com/vsneovim/vsneovim/main/utils/installer/install.sh)
 ```
