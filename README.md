@@ -39,7 +39,7 @@
 ## Documentation
 You can find all the documentation for VSNeoVim at [wiki](https://github.com/VSNeoVim/VSNeoVim/wiki)
 
-**NOTE:** for running VSNeoVim write ``$ vsn`` or ``$ vsn [file]``
+**NOTE:** for running VSNeoVim write ``$ vsn`` or ``$ vsn [file]`` command
 
 ## Installation
 
