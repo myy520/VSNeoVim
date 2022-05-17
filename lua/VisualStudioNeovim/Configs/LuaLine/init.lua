@@ -1,6 +1,16 @@
 local colors = {
-    bg = "#117DC6",
-    fg = "#ffffff",
+  bg = "#2D313A",
+  fg = "#bbc2cf",
+  yellow = "#ECBE7B",
+  cyan = "#008080",
+  darkblue = "#081633",
+  green = "#98be65",
+  orange = "#FF8800",
+  violet = "#a9a1e1",
+  magenta = "#c678dd",
+  purple = "#c678dd",
+  blue = "#51afef",
+  red = "#ec5f67",
 }
 
 function env_cleanup(venv)
@@ -71,13 +81,13 @@ local function ins_right(component)
   table.insert(config.sections.lualine_x, component)
 end
 
--- ins_left {
---   function()
---     return '▊'
---   end,
---   color = { fg = colors.blue }, -- Sets highlighting of component
---   padding = { left = 0, right = 1 }, -- We don't need space before this
--- }
+ins_left {
+  function()
+    return '▊'
+  end,
+  color = { fg = colors.blue }, -- Sets highlighting of component
+  padding = { left = 0, right = 0 }, -- We don't need space before this
+}
 
 ins_left {
   'branch',
@@ -85,43 +95,25 @@ ins_left {
   color = { fg = colors.fg, gui = 'bold' },
 }
 
--- Add components to right sections
 ins_left {
-  'diff',
-  -- Is it me or the symbol for modified us really weird
-  symbols = { added = ' ', modified = '柳', removed = ' ' },
-  diff_color = {
-    added = { fg = colors.fg },
-    modified = { fg = colors.fg },
-    removed = { fg = colors.fg },
-  },
+  "filename",
+  color = { fg = colors.fg },
+  cond = nil,
 }
 
 ins_left {
-   function(msg)
-    msg = msg or " Inactive"
-    local buf_clients = vim.lsp.buf_get_clients()
-    if next(buf_clients) == nil then
-      -- TODO: clean up this if statement
-      if type(msg) == "boolean" or #msg == 0 then
-        return " Inactive"
-      end
-      return msg
-    else
-      return "﫟"
-    end
-    local buf_client_names = {}
-
-    -- add client
-    for _, client in pairs(buf_clients) do
-      if client.name ~= "null-ls" then
-        table.insert(buf_client_names, client.name)
-      end
-    end
-
-    return table.concat(buf_client_names, ", ")
-  end,
-  color = { gui = "bold", fg= colors.fg},
+  'diagnostics',
+  symbols = { error = ' ', warn = ' ', info = ' ' },
+  diagnostics_color = {
+    error = {fg= colors.red},
+    warn  = {fg= colors.yellow},
+    info  = {fg= colors.blue},
+    hint  = {fg= colors.green},
+  },
+  sources = { "nvim_diagnostic" },
+	sections = { "error", "warn", "info", "hint"},
+	update_in_insert = true,
+	always_visible = false,
 }
 
 ins_left {
@@ -139,24 +131,8 @@ ins_left {
   end
   return ""
   end,
-  color = { fg = colors.fg },
+  color = { fg = colors.green },
   cond = conditions.hide_in_width,
-}
-
-
-ins_left {
-  'diagnostics',
-  symbols = { error = ' ', warn = ' ', info = ' ' },
-  diagnostics_color = {
-    error = {fg= colors.fg},
-    warn  = {fg= colors.fg},
-    info  = {fg= colors.fg},
-    hint  = {fg= colors.fg},
-  },
-  sources = { "nvim_diagnostic" },
-	sections = { "error", "warn", "info", "hint"},
-	update_in_insert = true,
-	always_visible = false,
 }
 
 ins_left {
@@ -169,6 +145,7 @@ ins_left {
   }
 }
 
+
 -- Insert mid section. You can make any number of sections in neovim :)
 -- for lualine it's any number greater then 2
 
@@ -178,59 +155,67 @@ ins_left {
   end,
 }
 
+ins_right {
+  'diff',
+  -- Is it me or the symbol for modified us really weird
+  symbols = { added = "  ", modified = " ", removed = " " },
+  diff_color = {
+    added = { fg = colors.green },
+    modified = { fg = colors.yellow },
+    removed = { fg = colors.red },
+  },
+}
+
 
 
 ins_right {
-  'location',
-  fmt = function(str)
-    return "Ln:" .. string.sub(str, 1, 3) .. "," .. "Col:" .. string.sub(str, 5)
+  function()
+    local b = vim.api.nvim_get_current_buf()
+    if next(vim.treesitter.highlighter.active[b]) then
+      return " "
+    end
+    return ""
   end,
-  color = { fg = colors.fg, gui = 'bold' },
-
+  color = { fg = colors.green },
+  cond = conditions.hide_in_width,
 }
 
 ins_right {
   function()
-    return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
-  end
-}
-
-
-ins_right {
-  'o:encoding', -- option component same as &encoding in viml
-  fmt = string.upper, -- I'm not sure why it's upper case either ;)
-  cond = conditions.hide_in_width,
-  color = { fg = colors.fg, gui = 'bold' },
-}
-
-
-ins_right {
-   function(msg)
-    msg = msg or ""
-    local buf_clients = vim.lsp.buf_get_clients()
-    if next(buf_clients) == nil then
-      if type(msg) == "boolean" or #msg == 0 then
-        return ""
-      end
+    local msg = 'No Active Lsp'
+    local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
+    local clients = vim.lsp.get_active_clients()
+    if next(clients) == nil then
       return msg
     end
-    local buf_client_names = {}
-
-    -- add client
-    for _, client in pairs(buf_clients) do
-      if client.name ~= "null-ls" then
-        table.insert(buf_client_names, client.name)
+    for _, client in ipairs(clients) do
+      local filetypes = client.config.filetypes
+      if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+        return client.name
       end
     end
-
-    return table.concat(buf_client_names, ", ")
+    return msg
   end,
-  color = { gui = "bold", fg= colors.fg},
+  icon = ' ',
+  color = { fg = colors.fg, gui = 'bold' },
 }
 
 ins_right {
   'filetype',
-  icons_enabled = false,
+  icons_enabled = true,
+}
+
+ins_right {
+  function()
+    local current_line = vim.fn.line "."
+    local total_lines = vim.fn.line "$"
+    local chars = { "__", "▁▁", "▂▂", "▃▃", "▄▄", "▅▅", "▆▆", "▇▇", "██" }
+    local line_ratio = current_line / total_lines
+    local index = math.ceil(line_ratio * #chars)
+    return chars[index]
+  end,
+  padding = { left = 0, right = 0 },
+  color = { fg = colors.yellow, bg = colors.bg },
 }
 
 -- Now don't forget to initialize lualine
