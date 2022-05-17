@@ -96,6 +96,16 @@ ins_left {
 }
 
 ins_left {
+  "mode",
+  fmt = function(str)
+    return "-- " .. str .. " --"
+  end,
+  color = {
+    fg = colors.fg,
+  }
+}
+
+ins_left {
   "filename",
   color = { fg = colors.fg },
   cond = nil,
@@ -116,6 +126,7 @@ ins_left {
 	always_visible = false,
 }
 
+
 ins_left {
   function()
     if vim.bo.filetype == "python" then
@@ -133,16 +144,6 @@ ins_left {
   end,
   color = { fg = colors.green },
   cond = conditions.hide_in_width,
-}
-
-ins_left {
-  "mode",
-  fmt = function(str)
-    return "-- " .. str .. " --"
-  end,
-  color = {
-    fg = colors.fg,
-  }
 }
 
 
