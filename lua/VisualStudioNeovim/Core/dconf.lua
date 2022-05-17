@@ -33,8 +33,8 @@ vsn = {
     cmdheight = 2,
   },
   global = {
-    theme = 'Darkup',
-    Darkup_style = "dark",
+    theme = 'onedarker',
+--    theme = 'Darkup',
   },
   keybindings = {
     localleader = " ",
@@ -43,7 +43,8 @@ vsn = {
   extensions = {
     -- adding your extensions with this template
     -- {"url", run="", config="", etc...}
-    {"VSNeoVim/Darkup.nvim"}
+    {"VSNeoVim/Darkup.nvim"},
+    {"VSNeoVim/onedarker.nvim"}
   },
   configs = {
     TreeIcons = {enabled = true},
