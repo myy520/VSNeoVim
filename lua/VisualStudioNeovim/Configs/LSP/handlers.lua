@@ -15,16 +15,16 @@ M.setup = function()
   local config = {
     -- disable virtual text
     virtual_text = {
-      enable = true,
-      prefix = "● ",
+      enable = vsn.configs.LSP.virtual_text,
+      prefix = vsn.configs.LSP.virtual_text_prefix,
       source = "always",
     },
     -- show signs
     signs = {
       active = signs,
     },
-    update_in_insert = true,
-    underline = true,
+    update_in_insert = vsn.configs.LSP.update_in_insert,
+    underline = vsn.configs.LSP.underline,
     severity_sort = true,
     float = {
       focusable = false,
