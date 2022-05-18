@@ -54,7 +54,7 @@ vsn = {
     IndentLine = {enabled = true},
     WhichKey = {enabled = true},
     CMP = {enabled = true},
-    LSP = {enabled = true},
+    LSP = {enabled = true, virtual_text = true, virtual_text_prefix = "● ", update_in_insert = true, underline = true},
     LSPInstaller = {enabled = true},
     Telescope = {enabled = true},
     Colorizer = {enabled = true},
