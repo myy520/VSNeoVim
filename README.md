@@ -113,8 +113,9 @@ vsn = {
 ## Screen environment
 
 ![Demo1](./media/1.png)
-![Demo2](./media/2.png)
-![Demo3](./media/3.png)
+![Demo2](./media/4.png)
+![Demo3](./media/2.png)
+![Demo4](./media/3.png)
 ## Resources
 
 - [Documentation](https://github.com/VSNeoVim/VSNeoVim/wiki)
