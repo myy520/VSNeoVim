@@ -39,7 +39,6 @@ local conditions = {
 }
 local config = {
   options = {
-    -- Disable sections and component separators
     component_separators = '',
     section_separators = '',
     disabled_filetypes = {"NvimTree", "alpha", "statify", "dashboard", "Outline"},
@@ -96,19 +95,11 @@ ins_left {
 }
 
 ins_left {
-  "mode",
-  fmt = function(str)
-    return "-- " .. str .. " --"
-  end,
-  color = {
-    fg = colors.fg,
-  }
-}
-
-ins_left {
   "filename",
+  fmt = function(str)
+    return " " .. string.sub(str, 1)
+  end,
   color = { fg = colors.fg },
-  cond = nil,
 }
 
 ins_left {
@@ -126,6 +117,15 @@ ins_left {
 	always_visible = false,
 }
 
+ins_left {
+  "mode",
+  fmt = function(str)
+    return "-- " .. str .. " --"
+  end,
+  color = {
+    fg = colors.fg,
+  }
+}
 
 ins_left {
   function()
@@ -146,19 +146,8 @@ ins_left {
   cond = conditions.hide_in_width,
 }
 
-
--- Insert mid section. You can make any number of sections in neovim :)
--- for lualine it's any number greater then 2
-
-ins_left {
-  function()
-    return '%='
-  end,
-}
-
 ins_right {
   'diff',
-  -- Is it me or the symbol for modified us really weird
   symbols = { added = "  ", modified = " ", removed = " " },
   diff_color = {
     added = { fg = colors.green },
@@ -174,6 +163,8 @@ ins_right {
     local b = vim.api.nvim_get_current_buf()
     if next(vim.treesitter.highlighter.active[b]) then
       return " "
+    else
+      return "TS Off"
     end
     return ""
   end,
@@ -197,7 +188,7 @@ ins_right {
     end
     return msg
   end,
-  icon = ' ',
+  icon = '﫟',
   color = { fg = colors.fg, gui = 'bold' },
 }
 
