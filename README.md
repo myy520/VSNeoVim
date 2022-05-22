@@ -37,6 +37,9 @@
 ![HOME](./media/2022-05-20_12-39.png)
 ![ENVIRONMENT](./media/2022-05-20_13-10.png)
 ![COMPILATION](./media/2022-05-20_13-35.png)
+
+NOTE: for running VSNeoVim write $ vsn or $ vsn [file] command
+
 ## Installation
 ```bash
 bash <(curl -s https://raw.githubusercontent.com/vsneovim/vsneovim/main/utils/installer/install.sh)
