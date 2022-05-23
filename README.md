@@ -38,7 +38,7 @@
 ![ENVIRONMENT](./media/2022-05-20_13-10.png)
 ![COMPILATION](./media/2022-05-20_13-35.png)
 
-NOTE: for running VSNeoVim write $ vsn or $ vsn [file] command
+NOTE: for running VSNeoVim write ``$ vsn`` or ``$ vsn [file]`` command
 
 ## Installation
 ```bash
