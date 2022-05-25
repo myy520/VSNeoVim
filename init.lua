@@ -1,10 +1,3 @@
-local vsn = {
-  -- Core
-  options = "vsn.dconf.options",
-  keymaps = "vsn.dconf.keymaps",
-  plugins = "vsn.dconf.plugins",
-  cursor = "vsn.dconf.cursor",
-}
 local core = {
   -- core
   FileExplorer = "vsn.core.FileExplorer",
@@ -30,12 +23,8 @@ local core = {
   LazyGit = "vsn.core.LazyGit",
 }
 
-require("vsn.dconf.dconf")
-require("vsn.dconf.utils")
+require("vsn.dconf.bootstrap"):init()
 
-for _,v in pairs(vsn) do
-  pcall(require, v)
-end
 for _,v in pairs(core) do
   pcall(require, v)
 end
