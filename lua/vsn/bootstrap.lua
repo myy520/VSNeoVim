@@ -24,9 +24,9 @@ function set_config_dir()
 end
 
 function requires_setup_config()
-  require("vsn.dconf.options")      -- options
-  require("vsn.dconf.keymaps")      -- keymaps
-  require("vsn.dconf.plugins")      -- plugins
+  require("vsn.options")      -- options
+  require("vsn.keymaps")      -- keymaps
+  require("vsn.plugins")      -- plugins
   require("vsn.dconf.cursor")       -- cursor
   require("vsn.dconf.dconf")        -- default config
 end
