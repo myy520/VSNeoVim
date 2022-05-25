@@ -23,7 +23,7 @@ local core = {
   LazyGit = "vsn.core.LazyGit",
 }
 
-require("vsn.dconf.bootstrap"):init()
+require("vsn.bootstrap"):init()
 
 for _,v in pairs(core) do
   pcall(require, v)
