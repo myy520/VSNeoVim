@@ -1,40 +1,39 @@
-local VisualStudioNeovim = {
+local vsn = {
   -- Core
-  options = "VisualStudioNeovim.dconf.options",
-  keymaps = "VisualStudioNeovim.dconf.keymaps",
-  plugins = "VisualStudioNeovim.dconf.plugins",
-  cursor = "VisualStudioNeovim.dconf.cursor",
+  options = "vsn.dconf.options",
+  keymaps = "vsn.dconf.keymaps",
+  plugins = "vsn.dconf.plugins",
+  cursor = "vsn.dconf.cursor",
 }
 local Configs = {
   -- Configs
-  FileExplorer = "VisualStudioNeovim.Configs.FileExplorer",
-  BufferLine = "VisualStudioNeovim.Configs.BufferLine",
-  LuaLine = "VisualStudioNeovim.Configs.LuaLine",
-  Terminal = "VisualStudioNeovim.Configs.Terminal",
-  Project = "VisualStudioNeovim.Configs.Project",
-  Impatient = "VisualStudioNeovim.Configs.Impatient",
-  IndentLine = "VisualStudioNeovim.Configs.IndentLine",
-  Alpha = "VisualStudioNeovim.Configs.Alpha",
-  WhichKey = "VisualStudioNeovim.Configs.WhichKey",
-  CMP = "VisualStudioNeovim.Configs.CMP",
-  LSP = "VisualStudioNeovim.Configs.LSP",
-  Tlescope = "VisualStudioNeovim.Configs.Telescope",
-  Colorizer = "VisualStudioNeovim.Configs.Colorizer",
-  Notification = "VisualStudioNeovim.Configs.Notification",
-  Treesitter = "VisualStudioNeovim.Configs.Treesitter",
-  Comments = "VisualStudioNeovim.Configs.Comments",
-  Autopairs = "VisualStudioNeovim.Configs.Autopairs",
-  Gitsigns = "VisualStudioNeovim.Configs.Gitsigns",
-  SymbolsOutline = "VisualStudioNeovim.Configs.SymbolsOutline",
-  DAP = "VisualStudioNeovim.Configs.DAP",
-  LazyGit = "VisualStudioNeovim.Configs.LazyGit",
+  FileExplorer = "vsn.Configs.FileExplorer",
+  BufferLine = "vsn.Configs.BufferLine",
+  LuaLine = "vsn.Configs.LuaLine",
+  Terminal = "vsn.Configs.Terminal",
+  Project = "vsn.Configs.Project",
+  Impatient = "vsn.Configs.Impatient",
+  IndentLine = "vsn.Configs.IndentLine",
+  Alpha = "vsn.Configs.Alpha",
+  WhichKey = "vsn.Configs.WhichKey",
+  CMP = "vsn.Configs.CMP",
+  LSP = "vsn.Configs.LSP",
+  Tlescope = "vsn.Configs.Telescope",
+  Colorizer = "vsn.Configs.Colorizer",
+  Notification = "vsn.Configs.Notification",
+  Treesitter = "vsn.Configs.Treesitter",
+  Comments = "vsn.Configs.Comments",
+  Autopairs = "vsn.Configs.Autopairs",
+  Gitsigns = "vsn.Configs.Gitsigns",
+  SymbolsOutline = "vsn.Configs.SymbolsOutline",
+  DAP = "vsn.Configs.DAP",
+  LazyGit = "vsn.Configs.LazyGit",
 }
 
+require("vsn.dconf.dconf")
+require("vsn.dconf.utils")
 
-require("VisualStudioNeovim.dconf.dconf")
-require("VisualStudioNeovim.dconf.utils")
-
-for _,v in pairs(VisualStudioNeovim) do
+for _,v in pairs(vsn) do
   pcall(require, v)
 end
 for _,v in pairs(Configs) do
