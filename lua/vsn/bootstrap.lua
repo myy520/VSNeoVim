@@ -27,8 +27,8 @@ function requires_setup_config()
   require("vsn.options")      -- options
   require("vsn.keymaps")      -- keymaps
   require("vsn.plugins")      -- plugins
-  require("vsn.dconf.cursor")       -- cursor
-  require("vsn.dconf.dconf")        -- default config
+  require("vsn.dconf.cursor") -- cursor
+  require("vsn.dconf.dconf")  -- default config
 end
 
 function C:init()
