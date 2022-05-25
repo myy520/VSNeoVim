@@ -1,9 +1,9 @@
 local VisualStudioNeovim = {
   -- Core
-  options = "VisualStudioNeovim.Core.options",
-  keymaps = "VisualStudioNeovim.Core.keymaps",
-  plugins = "VisualStudioNeovim.Core.plugins",
-  cursor = "VisualStudioNeovim.Core.cursor",
+  options = "VisualStudioNeovim.dconf.options",
+  keymaps = "VisualStudioNeovim.dconf.keymaps",
+  plugins = "VisualStudioNeovim.dconf.plugins",
+  cursor = "VisualStudioNeovim.dconf.cursor",
 }
 local Configs = {
   -- Configs
@@ -31,8 +31,8 @@ local Configs = {
 }
 
 
-require("VisualStudioNeovim.Core.dconf")
-require("VisualStudioNeovim.Core.utils")
+require("VisualStudioNeovim.dconf.dconf")
+require("VisualStudioNeovim.dconf.utils")
 
 for _,v in pairs(VisualStudioNeovim) do
   pcall(require, v)
