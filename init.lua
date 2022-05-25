@@ -5,29 +5,29 @@ local vsn = {
   plugins = "vsn.dconf.plugins",
   cursor = "vsn.dconf.cursor",
 }
-local Configs = {
-  -- Configs
-  FileExplorer = "vsn.Configs.FileExplorer",
-  BufferLine = "vsn.Configs.BufferLine",
-  LuaLine = "vsn.Configs.LuaLine",
-  Terminal = "vsn.Configs.Terminal",
-  Project = "vsn.Configs.Project",
-  Impatient = "vsn.Configs.Impatient",
-  IndentLine = "vsn.Configs.IndentLine",
-  Alpha = "vsn.Configs.Alpha",
-  WhichKey = "vsn.Configs.WhichKey",
-  CMP = "vsn.Configs.CMP",
-  LSP = "vsn.Configs.LSP",
-  Tlescope = "vsn.Configs.Telescope",
-  Colorizer = "vsn.Configs.Colorizer",
-  Notification = "vsn.Configs.Notification",
-  Treesitter = "vsn.Configs.Treesitter",
-  Comments = "vsn.Configs.Comments",
-  Autopairs = "vsn.Configs.Autopairs",
-  Gitsigns = "vsn.Configs.Gitsigns",
-  SymbolsOutline = "vsn.Configs.SymbolsOutline",
-  DAP = "vsn.Configs.DAP",
-  LazyGit = "vsn.Configs.LazyGit",
+local core = {
+  -- core
+  FileExplorer = "vsn.core.FileExplorer",
+  BufferLine = "vsn.core.BufferLine",
+  LuaLine = "vsn.core.LuaLine",
+  Terminal = "vsn.core.Terminal",
+  Project = "vsn.core.Project",
+  Impatient = "vsn.core.Impatient",
+  IndentLine = "vsn.core.IndentLine",
+  Alpha = "vsn.core.Alpha",
+  WhichKey = "vsn.core.WhichKey",
+  CMP = "vsn.core.CMP",
+  LSP = "vsn.core.LSP",
+  Tlescope = "vsn.core.Telescope",
+  Colorizer = "vsn.core.Colorizer",
+  Notification = "vsn.core.Notification",
+  Treesitter = "vsn.core.Treesitter",
+  Comments = "vsn.core.Comments",
+  Autopairs = "vsn.core.Autopairs",
+  Gitsigns = "vsn.core.Gitsigns",
+  SymbolsOutline = "vsn.core.SymbolsOutline",
+  DAP = "vsn.core.DAP",
+  LazyGit = "vsn.core.LazyGit",
 }
 
 require("vsn.dconf.dconf")
@@ -36,6 +36,6 @@ require("vsn.dconf.utils")
 for _,v in pairs(vsn) do
   pcall(require, v)
 end
-for _,v in pairs(Configs) do
+for _,v in pairs(core) do
   pcall(require, v)
 end
