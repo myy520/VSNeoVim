@@ -23,17 +23,14 @@ function set_config_dir()
   vim.cmd('luafile ' .. CONFIG_PATH .. "/config.lua")
 end
 
-function requires_setup_config()
+function C:init()
+  self.config_dir = set_config_dir()
+
   require("vsn.options")      -- options
   require("vsn.keymaps")      -- keymaps
   require("vsn.plugins")      -- plugins
   require("vsn.dconf.cursor") -- cursor
   require("vsn.dconf.dconf")  -- default config
-end
-
-function C:init()
-  self.config_dir = set_config_dir()
-  self.requires_setup = requires_setup_config()
 end
 
 return C
