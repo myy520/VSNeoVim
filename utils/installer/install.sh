@@ -36,6 +36,30 @@ function dependencies() {
   echo "  tree-sitter "
   echo ""
 }
+function parse_arguments() {
+  while [ "$#" -gt 0 ]; do
+    case "$1" in
+      -d | --dependencies)
+        dependencies   
+        exit 0
+        ;;
+      -i | --install)
+        installation
+        cloning_vsneovim
+        ;;
+      -m | --miniinstall)
+        miniinstallation
+        cloning_vsneovim
+        exit 0
+        ;;
+      -h | --help)
+        usage
+        exit 0
+        ;;
+    esac
+    shift
+  done
+}
 function detect_platform() {
   OS="$(uname -s)"
   case "$OS" in
@@ -132,30 +156,6 @@ function install_binary() {
   echo "installing binary script ..."
   curl -s https://raw.githubusercontent.com/vsneovim/vsneovim/main/utils/bin/vsn >> $HOME/.local/bin/vsn
   chmod +x $HOME/.local/bin/vsn
-}
-function parse_arguments() {
-  while [ "$#" -gt 0 ]; do
-    case "$1" in
-      -d | --dependencies)
-        dependencies   
-        exit 0
-        ;;
-      -i | --install)
-        installation
-        cloning_vsneovim
-        ;;
-      -m | --miniinstall)
-        miniinstallation
-        cloning_vsneovim
-        exit 0
-        ;;
-      -h | --help)
-        usage
-        exit 0
-        ;;
-    esac
-    shift
-  done
 }
 function logo(){
   cat <<'EOF'
