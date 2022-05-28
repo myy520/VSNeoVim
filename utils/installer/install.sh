@@ -60,6 +60,12 @@ function parse_arguments() {
     shift
   done
 }
+function msg() {
+  local text="$1"
+  local div_width="80"
+  printf "%${div_width}s\n" ' ' | tr ' ' -
+  printf "%s\n" "$text"
+}
 function detect_platform() {
   OS="$(uname -s)"
   case "$OS" in
