@@ -1,8 +1,16 @@
 #!/usr/bin/bash
-VSNEOVIM_BRANCH="main"
-VSNEOVIM_REPOSITORY="https://github.com/VSNeoVim/VSNeoVim"
-VSNEOVIM_RUNTIME_PATH="$HOME/.local/share"
-VSNEOVIM_DIR_NAME="VSNeoVim"
+
+declare VSN_BRANCH="${VSN_BRANCH:-"main"}"
+declare -r VSN_REMOTE="${VSN_REMOTE:-VSNeoVim/VSNeoVim.git}"
+
+declare -r INSTALL_PREFIX="${INSTALL_PREFIX:-"$HOME/.local"}"
+declare -r XDG_DATA_HOME="${XDG_DATA_HOME:-"$HOME/.local/share"}"
+declare -r XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-"$HOME/.config"}"
+declare -r XDG_CACHE_HOME="${XDG_CACHE_HOME:-"$HOME/.cache"}"
+
+declare -r VSN_RUNTIME_DIR="${VSN_RUNTIME_DIR:-"$XDG_DATA_HOME/vsneovim"}"
+declare -r VSN_CONFIG_DIR="${LUNARVIM_CONFIG_DIR:-"$XDG_CONFIG_HOME/vsn"}"
+declare -r VSN_CACHE_DIR="${LUNARVIM_CACHE_DIR:-"$XDG_CACHE_HOME/vsn"}"
 
 
 function usage() {
