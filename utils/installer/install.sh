@@ -4,6 +4,7 @@ declare VSN_BRANCH="${VSN_BRANCH:-"main"}"
 declare -r VSN_REMOTE="${VSN_REMOTE:-VSNeoVim/VSNeoVim.git}"
 
 declare -r INSTALL_PREFIX="${INSTALL_PREFIX:-"$HOME/.local"}"
+
 declare -r XDG_DATA_HOME="${XDG_DATA_HOME:-"$HOME/.local/share"}"
 declare -r XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-"$HOME/.config"}"
 declare -r XDG_CACHE_HOME="${XDG_CACHE_HOME:-"$HOME/.cache"}"
@@ -12,7 +13,12 @@ declare -r VSN_RUNTIME_DIR="${VSN_RUNTIME_DIR:-"$XDG_DATA_HOME/vsneovim"}"
 declare -r VSN_CONFIG_DIR="${LUNARVIM_CONFIG_DIR:-"$XDG_CONFIG_HOME/vsn"}"
 declare -r VSN_CACHE_DIR="${LUNARVIM_CACHE_DIR:-"$XDG_CACHE_HOME/vsn"}"
 
-
+function msg() {
+  local text="$1"
+  local div_width="80"
+  printf "%${div_width}s\n" ' ' | tr ' ' -
+  printf "%s\n" "$text"
+}
 function usage() {
   echo "Usage: install.sh [<options>]"
   echo ""
@@ -60,23 +66,21 @@ function parse_arguments() {
     shift
   done
 }
-function msg() {
-  local text="$1"
-  local div_width="80"
-  printf "%${div_width}s\n" ' ' | tr ' ' -
-  printf "%s\n" "$text"
-}
 function detect_platform() {
   OS="$(uname -s)"
   case "$OS" in
     Linux)
       if [ -f "/etc/arch-release" ] || [ -f "/etc/artix-release" ]; then
+        msg "Detecting platform: installing setup on arch based system."
         RECOMMEND_INSTALL="sudo pacman -S --noconfirm"
       elif [ -f "/etc/fedora-release" ] || [ -f "/etc/redhat-release" ]; then
+        msg "Detecting platform: installing setup on redhat based system."
         RECOMMEND_INSTALL="sudo dnf install -y"
       elif [ -f "/etc/gentoo-release" ]; then
+        msg "Detecting platform: installing setup on gento system"
         RECOMMEND_INSTALL="emerge install -y"
       else # assume debian based
+        msg "Detecting platform: installing setup on debian based system"
         RECOMMEND_INSTALL="sudo apt install -y"
       fi
       ;;
@@ -98,43 +102,51 @@ function detect_platform() {
       ;;
   esac
 }
+function confirm() {
+  local question="$1"
+  while true; do
+    msg "$question"
+    read -p "[y]es or [n]o (default: yes) : " -r answer
+    case "$answer" in
+      y | Y | yes | YES | Yes | "")
+        return 0
+        ;;
+      n | N | no | NO | No)
+        return 1
+        ;;
+      *)
+        msg "Please answer [y]es or [n]o."
+        ;;
+    esac
+  done
+}
 function __installing_neovim() {
-  echo "Would you like to install neovim ? (Only if you don't have neovim installed)"
-  read -p "[Y]es or [N]o : " answer
-  if [[ "$answer" == "Y" || "$answer" == "y" ]]; then
+  if confirm "Would you like to install neovim ?"; then
     $RECOMMEND_INSTALL neovim
   fi
   echo ""
 }
 function __installing_lua() {
-  echo "Would you like to install lua and luajit ? (Only if you don't have lua and luaJIT installed)"
-  read -p "[Y]es or [N]o : " answer
-  if [[ "$answer" == "Y" || "$answer" == "y" ]]; then
+  if confirm "Would you like to install lua and luajit ?"; then
     $RECOMMEND_INSTALL luajit
     $RECOMMEND_INSTALL lua || $RECOMMEND_INSTALL lua5.4
   fi
   echo ""
 }
 function __installing_python() {
-  echo "Would you like to install neovim's python librarys ? (Recomended , install only if pynvim is NOT installed)"
-  read -p "[Y]es or [N]o : " answer
-  if [[ "$answer" == "Y" || "$answer" == "y" ]]; then
+  if confirm "Would you like to install neovim's python librarys ?"; then
     python3 -m pip install pynvim
   fi
   echo ""
 }
 function __installing_node() {
-  echo "Would you like to install node ?"
-  read -p "[Y]es or [N]o : " answer
-  if [[ "$answer" == "Y" || "$answer" == "y" ]]; then
+  if confirm "Would you like to install node ?"; then
     $RECOMMEND_INSTALL nodejs npm yarn
   fi
   echo ""
 }
 function __installing_utils() {
-  echo "Would you like to install some recomended utilities ? (treesitter and lazygit) "
-  read -p "[Y]es or [N]o : " answer
-  if [[ "$answer" == "Y" || "$answer" == "y" ]]; then
+  if confirm "Would you like to install treesitter and lazygit ?"; then
     $RECOMMEND_INSTALL lazygit  tree-sitter
   fi
   echo ""
@@ -154,12 +166,12 @@ function miniinstallation() {
   __installing_node
 }
 function cloning_vsneovim() {
-  echo "cloning VSNeoVim ..."
-  git clone --branch $VSNEOVIM_BRANCH $VSNEOVIM_REPOSITORY $VSNEOVIM_RUNTIME_PATH/$VSNEOVIM_DIR_NAME
+  msg "cloning VSNeoVim ..."
+  git clone --branch "$VSN_BRANCH" "https://github.com/${VSN_REMOTE}" "$VSN_RUNTIME_DIR"
   echo "done cloning !"
 }
 function install_binary() {
-  echo "installing binary script ..."
+  msg "installing binary script ..."
   curl -s https://raw.githubusercontent.com/vsneovim/vsneovim/main/utils/bin/vsn >> $HOME/.local/bin/vsn
   chmod +x $HOME/.local/bin/vsn
 }
@@ -192,6 +204,7 @@ function logo(){
 EOF
 }
 function main() {
+  clear
   parse_arguments "$@"
   logo
   installation
