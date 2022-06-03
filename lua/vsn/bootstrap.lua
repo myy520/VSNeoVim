@@ -19,13 +19,13 @@ function get_config_dir()
 end
 
 function set_config_dir()
-  stdpath = function(value)
+  vim.fn.stdpath = function(value)
     if value == "config" then
-      return XDG_CFG_HOME
+      return get_config_dir()
     end
-    return stdpath("config")
+    return vim.fn.stdpath("config")
   end
-  local CONFIG_PATH = stdpath('config')
+  local CONFIG_PATH = vim.fn.stdpath('config')
   vim.cmd('luafile ' .. CONFIG_PATH .. "/config.lua")
 end
 
