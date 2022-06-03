@@ -13,6 +13,11 @@ function get_runtime_dir()
   return vsn_runtime_dir
 end
 
+function get_config_dir()
+  local vsn_config_dir = os.getenv("VSN_CONFIG_DIR")
+  return vsn_config_dir
+end
+
 function set_config_dir()
   stdpath = function(value)
     if value == "config" then
@@ -26,6 +31,7 @@ end
 
 function C:init()
   self.runtime_dir = get_runtime_dir()
+  self.config_dir = get_config_dir()
   self.config_dir = set_config_dir()
 
   require("vsn.dconf.dconf")  -- default config
