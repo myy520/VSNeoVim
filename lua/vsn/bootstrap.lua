@@ -8,6 +8,11 @@ if vim.fn.has "nvim-0.7" ~= 1 then
   vim.cmd "cquit"
 end
 
+function get_runtime_dir()
+  local vsn_runtime_dir = os.getenv("VSN_RUNTIME_DIR")
+  return vsn_runtime_dir
+end
+
 function set_config_dir()
   stdpath = function(value)
     if value == "config" then
@@ -20,6 +25,7 @@ function set_config_dir()
 end
 
 function C:init()
+  self.runtime_dir = get_runtime_dir()
   self.config_dir = set_config_dir()
 
   require("vsn.dconf.dconf")  -- default config
