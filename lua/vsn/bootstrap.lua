@@ -32,7 +32,8 @@ end
 function C:init()
   self.runtime_dir = get_runtime_dir()
   self.config_dir = get_config_dir()
-  self.config_dir = set_config_dir()
+  
+  self.set_config_dir = set_config_dir()
 
   require("vsn.dconf.dconf")  -- default config
   require("vsn.options")      -- options
