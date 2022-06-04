@@ -18,6 +18,11 @@ function get_config_dir()
   return vsn_config_dir
 end
 
+function get_data_dir()
+  local vsn_data_dir = os.getenv("XDG_DATA_HOME")
+  return vsn_data_dir
+end
+
 function set_config_dir()
   vim.fn.stdpath = function(value)
     if value == "config" then
@@ -32,6 +37,7 @@ end
 function C:init()
   self.runtime_dir = get_runtime_dir()
   self.config_dir = get_config_dir()
+  self.data_dir = get_data_dir()
   
   self.set_config_dir = set_config_dir()
 
