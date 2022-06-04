@@ -24,13 +24,14 @@ function get_data_dir()
 end
 
 function set_config_dir()
-  vim.fn.stdpath = function(value)
+  local stdpath = vim.fn.stdpath
+  stdpath = function(value)
     if value == "config" then
       return get_config_dir()
     end
-    return vim.fn.stdpath("config")
+    return stdpath("config")
   end
-  local CONFIG_PATH = vim.fn.stdpath('config')
+  local CONFIG_PATH = stdpath('config')
   vim.cmd('luafile ' .. CONFIG_PATH .. "/config.lua")
 end
 
