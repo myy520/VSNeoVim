@@ -35,6 +35,12 @@ function _G.get_cache_dir()
 end
 
 function C:init()
+  self.runtime_dir = get_runtime_dir()
+  self.config_dir = get_config_dir()
+  self.cache_dir = get_cache_dir()
+
+
+
   require("vsn.dconf.settings").load_options()
   require("vsn.shortcuts")
 end
