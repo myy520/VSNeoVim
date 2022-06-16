@@ -1,6 +1,6 @@
 local C = {}
 
-local utils = require("vsn.utils")
+utils = require("vsn.utils")
 
 if vim.fn.has "nvim-0.7" ~= 1 then
   vim.notify("Please upgrade your Neovim base installation. VSNeoVim requires v0.7+", vim.log.levels.WARN)
@@ -39,7 +39,7 @@ function _G.get_cache_dir()
   return vsn_cache_dir
 end
 
-function C:init()
+function C:init(BASEDIR)
   self.runtime_dir = get_runtime_dir()
   self.config_dir = get_config_dir()
   self.cache_dir = get_cache_dir()
@@ -55,8 +55,29 @@ function C:init()
     return vim.call("stdpath", what)
   end
 
+  function _G.get_vsn_base_dir()
+    return BASEDIR
+  end
+
+  if os.getenv "VSN_RUNTIME_DIR" then
+    -- vim.opt.rtp:append(os.getenv "LUNARVIM_RUNTIME_DIR" .. path_sep .. "lvim")
+    vim.opt.rtp:remove(utils.join_paths(vim.call("stdpath", "data"), "site"))
+    vim.opt.rtp:remove(utils.join_paths(vim.call("stdpath", "data"), "site", "after"))
+    vim.opt.rtp:prepend(utils.join_paths(self.runtime_dir, "site"))
+    vim.opt.rtp:append(utils.join_paths(self.runtime_dir, "site", "after"))
+
+    vim.opt.rtp:remove(vim.call("stdpath", "config"))
+    vim.opt.rtp:remove(utils.join_paths(vim.call("stdpath", "config"), "after"))
+    vim.opt.rtp:prepend(self.config_dir)
+    vim.opt.rtp:append(utils.join_paths(self.config_dir, "after"))
+
+    vim.cmd [[let &packpath = &runtimepath]]
+  end
+
   require("vsn.dconf.settings").load_options()
   require("vsn.shortcuts")
+  require("vsn.extension-loader")
+
 end
 
 return C
