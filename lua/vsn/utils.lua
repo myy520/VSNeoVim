@@ -7,4 +7,9 @@ function C.join_paths(path)
   return result
 end
 
+function C.require_clean(module)
+  local requested = pcall(require, module)
+  return requested
+end
+
 return C
