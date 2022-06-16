@@ -26,6 +26,14 @@ function _G.get_config_dir()
   return vsn_config_dir
 end
 
+function _G.get_cache_dir()
+  local vsn_cache_dir = os.getenv "VSN_CACHE_DIR"
+  if not vsn_cache_dir then
+    return vim.call("stdpath", "cache")
+  end
+  return vsn_cache_dir
+end
+
 function C:init()
   require("vsn.dconf.settings").load_options()
   require("vsn.shortcuts")
