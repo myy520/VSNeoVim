@@ -10,6 +10,7 @@ end
 
 function C:init()
   require("vsn.dconf.settings").load_options()
+  require("vsn.shortcuts")
 end
 
 return C
