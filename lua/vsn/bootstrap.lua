@@ -18,6 +18,14 @@ function _G.get_runtime_dir()
   return vsn_runtime_dir
 end
 
+function _G.get_config_dir()
+  local vsn_config_dir = os.getenv "VSN_CONFIG_DIR"
+  if not vsn_config_dir then
+    return vim.call("stdpath", "config")
+  end
+  return vsn_config_dir
+end
+
 function C:init()
   require("vsn.dconf.settings").load_options()
   require("vsn.shortcuts")
