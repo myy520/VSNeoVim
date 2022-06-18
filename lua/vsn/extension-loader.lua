@@ -42,7 +42,15 @@ function extesion_loader:init()
     log = { level = "warn" }, -- The default print log level. One of: "trace", "debug", "info", "warn", "error", "fatal".
   }
 
+  local extension = require("vsn.extension")
+
   return packer.startup(function(use)
+    for _, plugins in ipairs(extension) do
+      for _, plugin in ipairs(plugins) do
+        use(plugin)
+      end
+    end
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then
