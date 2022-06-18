@@ -79,7 +79,7 @@ function C:init(BASEDIR)
 
   require("vsn.dconf.settings").load_options()
   require("vsn.shortcuts")
-  require("vsn.extension-loader")
+  require("vsn.extension-loader"):init()
 
 end
 
