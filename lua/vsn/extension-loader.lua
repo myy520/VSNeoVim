@@ -42,10 +42,10 @@ function extesion_loader:init()
     log = { level = "warn" }, -- The default print log level. One of: "trace", "debug", "info", "warn", "error", "fatal".
   }
 
-  local extension = require("vsn.extension")
+  local extensions = require("vsn.extensions")
 
   return packer.startup(function(use)
-    for _, plugins in ipairs(extension) do
+    for _, plugins in ipairs(extensions) do
       for _, plugin in ipairs(plugins) do
         use(plugin)
       end
