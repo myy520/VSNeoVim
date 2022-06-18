@@ -43,6 +43,28 @@ function C:init(BASEDIR)
   self.runtime_dir = get_runtime_dir()
   self.config_dir = get_config_dir()
   self.cache_dir = get_cache_dir()
+  self.data_home = get_data_home()
+
+  function _G.get_vsn_base_dir()
+    return BASEDIR
+  end
+
+  if os.getenv "VSN_RUNTIME_DIR" then
+    vim.opt.rtp:remove(vim.call("stdpath", "config"))
+    vim.opt.rtp:remove(vim.call("stdpath", "config") .. "/after")
+    vim.opt.rtp:remove(self.data_home .. "/nvim/site")
+    vim.opt.rtp:remove(self.data_home .. "/nvim/site/after")
+    vim.opt.rtp:remove(vim.call("stdpath", "data") .. "/site")
+    vim.opt.rtp:prepend(utils.join_paths(self.runtime_dir, "site"))
+    vim.opt.rtp:append(utils.join_paths(self.runtime_dir, "site", "after"))
+    vim.opt.rtp:prepend(self.config_dir)
+    vim.opt.rtp:prepend(self.data_home .. "/vsneovim-data/site")
+    vim.opt.rtp:append(utils.join_paths(self.config_dir, "after"))
+
+    vim.cmd ([[
+      let &packpath = &runtimepath
+    ]])
+  end
 
   vim.fn.stdpath = function(what)
     if what == "data" then
@@ -53,25 +75,6 @@ function C:init(BASEDIR)
       return _G.get_cache_dir()
     end
     return vim.call("stdpath", what)
-  end
-
-  function _G.get_vsn_base_dir()
-    return BASEDIR
-  end
-
-  if os.getenv "VSN_RUNTIME_DIR" then
-    -- vim.opt.rtp:append(os.getenv "LUNARVIM_RUNTIME_DIR" .. path_sep .. "lvim")
-    vim.opt.rtp:remove(utils.join_paths(vim.call("stdpath", "data"), "site"))
-    vim.opt.rtp:remove(utils.join_paths(vim.call("stdpath", "data"), "site", "after"))
-    vim.opt.rtp:prepend(utils.join_paths(self.runtime_dir, "site"))
-    vim.opt.rtp:append(utils.join_paths(self.runtime_dir, "site", "after"))
-
-    vim.opt.rtp:remove(vim.call("stdpath", "config"))
-    vim.opt.rtp:remove(utils.join_paths(vim.call("stdpath", "config"), "after"))
-    vim.opt.rtp:prepend(self.config_dir)
-    vim.opt.rtp:append(utils.join_paths(self.config_dir, "after"))
-
-    vim.cmd [[let &packpath = &runtimepath]]
   end
 
   require("vsn.dconf.settings").load_options()
