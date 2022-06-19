@@ -79,6 +79,8 @@ function C:init(BASEDIR)
 
   require ("vsn.dconf.defaultConfig")
 
+  vim.cmd ( "colorscheme " .. vsn.options.theme )
+
 end
 
 return C
