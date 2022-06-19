@@ -1,4 +1,6 @@
 return {
+  -- packer
   { "wbthomason/packer.nvim" },
-  { "lunarvim/onedarker.nvim" }
+  -- onedarker
+  { "vsneovim/onedarker.nvim" }
 }
