@@ -53,7 +53,7 @@ local defaults = {
   },
 }
 
-function C.init()
+function C:getshortcuts()
   for i, k in pairs(defaults.insert_mode) do
     vim.keymap.set(modes.insert_mode, i, k, options)
   end
