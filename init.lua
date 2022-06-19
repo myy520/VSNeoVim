@@ -9,6 +9,6 @@ require("vsn.bootstrap"):init(BASEDIR)
 
 require("vsn.dconf.settings"):load_options()
 
-require("vsn.shortcuts"):init()
+require("vsn.shortcuts"):getshortcuts()
 
 require("vsn.extension-loader"):init()
