@@ -50,6 +50,9 @@ function extesion_loader:init()
         use(plugin)
       end
     end
+    for _, extension in pairs(vsn.extensions) do
+      use(extension)
+    end
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
