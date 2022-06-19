@@ -7,7 +7,7 @@ end
 
 require("vsn.bootstrap"):init(BASEDIR)
 
-require("vsn.dconf.settings"):load_options()
+require("vsn.dconf"):load()
 
 require("vsn.shortcuts"):getshortcuts()
 
