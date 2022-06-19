@@ -9,6 +9,7 @@ vsn = {
     number = true,
     shiftwidth = 2,
     tabstop = 2,
+    theme = "onedarker"
   },
   extensions = {
     -- add your oter extensions with this template
