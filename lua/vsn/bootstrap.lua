@@ -77,10 +77,6 @@ function C:init(BASEDIR)
     return vim.call("stdpath", what)
   end
 
-  require ("vsn.dconf.defaultConfig")
-
-  vim.cmd ( "colorscheme " .. vsn.options.theme )
-
 end
 
 return C
