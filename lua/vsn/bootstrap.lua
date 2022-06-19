@@ -76,11 +76,6 @@ function C:init(BASEDIR)
     end
     return vim.call("stdpath", what)
   end
-
-  require("vsn.dconf.settings").load_options()
-  require("vsn.shortcuts")
-  require("vsn.extension-loader"):init()
-
 end
 
 return C
