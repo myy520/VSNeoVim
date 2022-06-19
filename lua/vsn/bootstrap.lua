@@ -76,6 +76,9 @@ function C:init(BASEDIR)
     end
     return vim.call("stdpath", what)
   end
+
+  require ("vsn.dconf.defaultConfig")
+
 end
 
 return C
