@@ -2,6 +2,7 @@ local C = {}
 
 local core = {
   alpha = "vsn.core.alpha",
+  nvimTree = "vsn.core.nvimTree",
 }
 
 function C:load()
