@@ -22,5 +22,7 @@ vsn = {
     --   vim.g.OPTION
     --   require("alpha")...
     --   and etc ...
+    
+    nvimTree = {open_fille_on_new_tab=false,width=32,position="left",icons=true,diagnostics=true,enable_git=true,hidden_ignore_files=true}
   },
 }
