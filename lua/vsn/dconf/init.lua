@@ -8,8 +8,6 @@ function C:load()
 
   vim.cmd ("colorscheme " .. vsn.options.theme)
 
-  require("vsn.dconf.core"):load()
-
 end
 
 return C
