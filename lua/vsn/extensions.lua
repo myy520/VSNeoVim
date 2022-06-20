@@ -9,4 +9,6 @@ return {
   { "goolord/alpha-nvim" },
   -- nvim-tree
   { "kyazdani42/nvim-tree.lua" },
+  -- autopairs
+  { "windwp/nvim-autopairs" },
 }
