@@ -5,4 +5,6 @@ return {
   { "vsneovim/onedarker.nvim" },
   -- icons
   { "kyazdani42/nvim-web-devicons" },
+  -- alpha
+  { "goolord/alpha-nvim" },
 }
