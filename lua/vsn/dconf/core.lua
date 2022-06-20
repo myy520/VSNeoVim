@@ -3,6 +3,7 @@ local C = {}
 local core = {
   alpha = "vsn.core.alpha",
   nvimTree = "vsn.core.nvimTree",
+  autopairs = "vsn.core.autopairs",
 }
 
 function C:load()
