@@ -31,5 +31,7 @@ return {
   -- syntax highlighting (treesitter)
   { "nvim-treesitter/nvim-treesitter" },
   -- fix cursor hold
-  { "antoinemadec/FixCursorHold.nvim" }
+  { "antoinemadec/FixCursorHold.nvim" },
+  -- notifications (notify)
+  { "rcarriga/nvim-notify" },
 }
