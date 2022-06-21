@@ -8,7 +8,7 @@ local core = {
 
 function C:load()
   for _,v in pairs(core) do
-    pcall(require, v)
+    require(v)
   end
 end
 
