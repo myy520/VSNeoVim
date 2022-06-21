@@ -9,6 +9,7 @@ local core = {
   treesitter = "vsn.core.treesitter",
   notify = "vsn.core.notify",
   telescope = "vsn.core.telescope",
+  comment = "vsn.core.comment",
 }
 
 function C:load()
