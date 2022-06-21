@@ -38,4 +38,6 @@ return {
   -- comment
   { "JoosepAlviste/nvim-ts-context-commentstring" },
   { "numToStr/Comment.nvim" },
+  -- git
+  { "lewis6991/gitsigns.nvim" },
 }
