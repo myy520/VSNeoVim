@@ -34,4 +34,5 @@ return {
   { "antoinemadec/FixCursorHold.nvim" },
   -- notifications (notify)
   { "rcarriga/nvim-notify" },
+  { "nvim-telescope/telescope.nvim" },
 }
