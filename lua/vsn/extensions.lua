@@ -30,4 +30,6 @@ return {
   { "nvim-lua/plenary.nvim" },
   -- syntax highlighting (treesitter)
   { "nvim-treesitter/nvim-treesitter" },
+  -- fix cursor hold
+  { "antoinemadec/FixCursorHold.nvim" }
 }
