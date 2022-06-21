@@ -7,7 +7,8 @@ local core = {
   cmp = "vsn.core.cmp",
   lsp = "vsn.lsp",
   treesitter = "vsn.core.treesitter",
-  notify = "vsn.core.notify"
+  notify = "vsn.core.notify",
+  telescope = "vsn.core.telescope",
 }
 
 function C:load()
