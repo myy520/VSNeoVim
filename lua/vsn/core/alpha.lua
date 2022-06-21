@@ -1,9 +1,8 @@
-local status_ok, alpha = pcall(require, "alpha")
-if not status_ok then
-	return
-end
+local utils = require("vsn.utils")
 
-local dashboard = require("alpha.themes.dashboard")
+local alpha = utils.require_clean("alpha")
+
+local dashboard = utils.require_clean("alpha.themes.dashboard")
 
 local header = {
   "                      ########               ########                      ",
@@ -30,11 +29,11 @@ local header = {
   "    YP    `8888Y'   VP   V8P Y88888P  `Y88P'     YP    Y888888P YP  YP  YP ",
 }
 local buttons = {
-  dashboard.button("n", "  New File", ":ene <BAR> startinsert <>"),
-  dashboard.button("f", "  Find File", ":Telescope find_files <>"),
-  dashboard.button("p", "  Recent Projects", ":Telescope projects <>"),
-  dashboard.button("r", "  Recently used files", ":Telescope oldfiles <>"),
-  dashboard.button("t", "  Find Text", ":Telescope live_grep <>"),
+  dashboard.button("n", "  New File", ":ene <BAR> startinsert <CR>"),
+  dashboard.button("f", "  Find File", ":Telescope find_files <CR>"),
+  dashboard.button("p", "  Recent Projects", ":Telescope projects <CR>"),
+  dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
+  dashboard.button("t", "  Find Text", ":Telescope live_grep <CR>"),
   dashboard.button("c", "  configuration", ":edit ~/.config/vsn/config.lua<CR>"),
 }
 local types = {
