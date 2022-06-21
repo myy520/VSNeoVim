@@ -4,6 +4,7 @@ local core = {
   alpha = "vsn.core.alpha",
   nvimTree = "vsn.core.nvimTree",
   autopairs = "vsn.core.autopairs",
+  cmp = "vsn.core.cmp",
 }
 
 function C:load()
