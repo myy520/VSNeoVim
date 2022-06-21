@@ -39,6 +39,7 @@ local option = {silent = true, noremap=true}
 vim.keymap.set("n", "gf", "<CMD>lua require'lspsaga.provider'.lsp_finder()<CR>", option)
 vim.keymap.set("n", "ca", "<cmd>lua require('lspsaga.codeaction').code_action()<CR>", option)
 vim.keymap.set("n", "K", "<cmd>lua require('lspsaga.hover').render_hover_doc()<CR>", option)
+vim.keymap.set("n", "F", "<cmd>lua vim.lsp.buf.formatting()<CR>", {})
 vim.keymap.set("n", "<C-k>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>",option)
 vim.keymap.set("n", "<C-j>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>", option)
 vim.keymap.set("n", "gr", "<cmd>lua require('lspsaga.rename').rename()<CR>", option)
