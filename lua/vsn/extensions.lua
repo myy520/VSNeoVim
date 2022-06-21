@@ -13,6 +13,9 @@ return {
   { "windwp/nvim-autopairs" },
   -- lspconfig
   { "neovim/nvim-lspconfig" },
+  { "ray-x/lsp_signature.nvim" },
+  { "williamboman/nvim-lsp-installer" },
+  { "glepnir/lspsaga.nvim" },
   -- cmp
   { "hrsh7th/cmp-nvim-lsp" },
   { "hrsh7th/cmp-buffer" },
