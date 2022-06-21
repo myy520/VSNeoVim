@@ -26,4 +26,6 @@ return {
   { "saadparwaiz1/cmp_luasnip" },
   -- popup
   { "nvim-lua/popup.nvim" },
+  -- plenary
+  { "nvim-lua/plenary.nvim" },
 }
