@@ -10,6 +10,7 @@ local core = {
   notify = "vsn.core.notify",
   telescope = "vsn.core.telescope",
   comment = "vsn.core.comment",
+  gitsigns = "vsn.core.gitsigns",
 }
 
 function C:load()
