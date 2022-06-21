@@ -13,7 +13,6 @@ return {
   { "windwp/nvim-autopairs" },
   -- lspconfig
   { "neovim/nvim-lspconfig" },
-  { "ray-x/lsp_signature.nvim" },
   { "williamboman/nvim-lsp-installer" },
   { "glepnir/lspsaga.nvim" },
   { "jose-elias-alvarez/null-ls.nvim" },
@@ -29,4 +28,6 @@ return {
   { "nvim-lua/popup.nvim" },
   -- plenary
   { "nvim-lua/plenary.nvim" },
+  -- syntax highlighting (treesitter)
+  { "nvim-treesitter/nvim-treesitter" },
 }
