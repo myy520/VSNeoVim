@@ -6,6 +6,7 @@ local core = {
   autopairs = "vsn.core.autopairs",
   cmp = "vsn.core.cmp",
   lsp = "vsn.lsp",
+  treesitter = "vsn.core.treesitter"
 }
 
 function C:load()
