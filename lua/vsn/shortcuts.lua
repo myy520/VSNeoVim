@@ -34,6 +34,7 @@ local defaults = {
     [">"] = "<Esc>:><CR>",
     ["<S-Tab>"] = "<Esc>:<<CR>",
     ["<Tab>"] = "<Esc>:><CR>",
+    ["<C-n>"] = "<Esc>:NvimTreeToggle<CR>"
   },
   visual_mode = {
     ["<"] = "<gv",
