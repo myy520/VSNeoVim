@@ -5,3 +5,4 @@ lsp = utils.require_clean("lspconfig")
 require "vsn.lsp.lsp-saga"
 require "vsn.lsp.lsp-installer"
 require("vsn.lsp.handlers").setup()
+require("vsn.lsp.null-ls")
