@@ -35,4 +35,7 @@ return {
   -- notifications (notify)
   { "rcarriga/nvim-notify" },
   { "nvim-telescope/telescope.nvim" },
+  -- comment
+  { "JoosepAlviste/nvim-ts-context-commentstring" },
+  { "numToStr/Comment.nvim" },
 }
