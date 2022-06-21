@@ -16,6 +16,7 @@ return {
   { "ray-x/lsp_signature.nvim" },
   { "williamboman/nvim-lsp-installer" },
   { "glepnir/lspsaga.nvim" },
+  { "jose-elias-alvarez/null-ls.nvim" },
   -- cmp
   { "hrsh7th/cmp-nvim-lsp" },
   { "hrsh7th/cmp-buffer" },
