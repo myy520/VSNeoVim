@@ -1,7 +1,6 @@
-local status_ok, npairs = pcall(require, "nvim-autopairs")
-if not status_ok then
-  return
-end
+local utils = require("vsn.utils")
+
+local npairs = utils.require_clean("nvim-autopairs")
 
 npairs.setup {
   active = true,
