@@ -12,6 +12,7 @@ local core = {
   comment = "vsn.core.comment",
   gitsigns = "vsn.core.gitsigns",
   whichkey = "vsn.core.whichkey",
+  project = "vsn.core.project",
 }
 
 function C:load()
