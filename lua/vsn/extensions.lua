@@ -46,4 +46,6 @@ return {
   { "ahmedkhalf/project.nvim" },
   -- bufferline
   { "akinsho/bufferline.nvim" },
+  -- statusline (bufferline)
+  { "nvim-lualine/lualine.nvim" },
 }
