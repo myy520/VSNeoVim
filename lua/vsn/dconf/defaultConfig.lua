@@ -1,6 +1,7 @@
 vsn = {
   shortcuts = {
     options = { noremap = true, silent = true },
+    leaderKey = " ",
     -- vim.keymap.set(mode, key, work, options)
   },
   options = {
