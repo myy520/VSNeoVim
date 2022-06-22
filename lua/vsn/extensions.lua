@@ -41,4 +41,5 @@ return {
   -- git
   { "lewis6991/gitsigns.nvim" },
   { "max397574/which-key.nvim" },
+  { "ahmedkhalf/project.nvim" },
 }
