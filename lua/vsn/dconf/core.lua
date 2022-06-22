@@ -11,6 +11,7 @@ local core = {
   telescope = "vsn.core.telescope",
   comment = "vsn.core.comment",
   gitsigns = "vsn.core.gitsigns",
+  whichkey = "vsn.core.whichkey",
 }
 
 function C:load()
