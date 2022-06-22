@@ -5,7 +5,6 @@ local core = {
   nvimTree = "vsn.core.nvimTree",
   autopairs = "vsn.core.autopairs",
   cmp = "vsn.core.cmp",
-  lsp = "vsn.lsp",
   treesitter = "vsn.core.treesitter",
   notify = "vsn.core.notify",
   telescope = "vsn.core.telescope",
