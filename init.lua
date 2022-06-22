@@ -9,6 +9,8 @@ require("vsn.bootstrap"):init(BASEDIR)
 
 require("vsn.dconf"):load()
 
+vim.g.mapleader = vsn.shortcuts.leaderKey or " "
+
 require("vsn.shortcuts"):getshortcuts()
 
 require("vsn.extension-loader"):init()
