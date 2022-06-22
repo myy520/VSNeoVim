@@ -40,6 +40,7 @@ function dependencies() {
   echo "  python-pip  "
   echo "  lazygit     "
   echo "  tree-sitter "
+  echo "  ripgrep     "
   echo ""
 }
 function parse_arguments() {
@@ -151,6 +152,12 @@ function __installing_utils() {
   fi
   echo ""
 }
+function __installing_ripgrep() {
+  if confirm "Would you like to install treesitter and lazygit ?"; then
+    $RECOMMEND_INSTALL ripgrep
+  fi
+  echo ""
+}
 function installation() {
   detect_platform
   __installing_neovim
@@ -158,12 +165,14 @@ function installation() {
   __installing_python
   __installing_node
   __installing_utils
+  __installing_ripgrep
 }
 function miniinstallation() {
   detect_platform
   __installing_lua
   __installing_python
   __installing_node
+  __installing_ripgrep
 }
 function cloning_vsneovim() {
   msg "cloning VSNeoVim ..."
