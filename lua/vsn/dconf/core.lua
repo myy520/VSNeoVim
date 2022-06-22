@@ -14,6 +14,7 @@ local core = {
   whichkey = "vsn.core.whichkey",
   project = "vsn.core.project",
   bufferline = "vsn.core.bufferline",
+  lualine = "vsn.core.lualine",
 }
 
 function C:load()
