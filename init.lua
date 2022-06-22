@@ -14,3 +14,5 @@ vim.g.mapleader = vsn.shortcuts.leaderKey or " "
 require("vsn.shortcuts"):getshortcuts()
 
 require("vsn.extension-loader"):init()
+
+require("vsn.lsp"):init()
