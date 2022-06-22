@@ -13,6 +13,7 @@ local core = {
   gitsigns = "vsn.core.gitsigns",
   whichkey = "vsn.core.whichkey",
   project = "vsn.core.project",
+  bufferline = "vsn.core.bufferline",
 }
 
 function C:load()
