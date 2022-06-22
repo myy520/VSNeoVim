@@ -37,7 +37,7 @@ local config = {
       winblend = 0,
     },
     layout = {
-      height = { min = 4, max = 25 }, -- min and max height of the columns
+      height = { min = 3, max = 25 }, -- min and max height of the columns
       width = { min = 20, max = 50 }, -- min and max width of the columns
       spacing = 3, -- spacing between columns
       align = "left", -- align columns left, center or right
@@ -78,7 +78,7 @@ local config = {
     ["/"] = { "<ESC><CMD>lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<CR>", "Comment" },
   },
   mappings = {
-    [";"] = { "<cmd>Alpha<CR>", "Dashboard" },
+    ["a"] = { "<cmd>Alpha<CR>", "Dashboard" },
     ["w"] = { "<cmd>w!<CR>", "Save" },
     ["q"] = { "<cmd>qa!<CR>", "Quit" },
     ["/"] = { "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", "Comment" },
@@ -115,6 +115,9 @@ local config = {
       s = { "<cmd>PackerSync<CR>", "Sync" },
       S = { "<cmd>PackerStatus<CR>", "Status" },
       u = { "<cmd>PackerUpdate<CR>", "Update" },
+    },
+    P = {
+      name = "Extensions"
     },
 
     -- " Available Debug Adapters:
@@ -157,6 +160,7 @@ local config = {
       f = { "<cmd>lua vim.lsp.buf.formatting()", "Format" },
       i = { "<cmd>LspInfo<CR>", "Info" },
       I = { "<cmd>LspInstallInfo<CR>", "Installer Info" },
+      n = { "<cmd>LspInstall ", "Install New Server" },
       j = {
         vim.diagnostic.goto_next,
         "Next Diagnostic",
