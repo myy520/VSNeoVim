@@ -40,7 +40,10 @@ return {
   { "numToStr/Comment.nvim" },
   -- git
   { "lewis6991/gitsigns.nvim" },
+  -- which-key
   { "max397574/which-key.nvim" },
+  -- project
   { "ahmedkhalf/project.nvim" },
+  -- bufferline
   { "akinsho/bufferline.nvim" },
 }
