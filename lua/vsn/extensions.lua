@@ -3,7 +3,6 @@ local packer = utils.require_clean("packer")
 
 return packer.startup(function(use)
 
-  use{ "tzachar/cmp-tabnine", run="./install.sh"}
 	-- packer
   use { "wbthomason/packer.nvim" }
   -- onedarker
