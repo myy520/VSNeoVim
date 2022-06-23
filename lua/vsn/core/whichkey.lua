@@ -1,6 +1,6 @@
-local utils = require("vsn.utils")
+local utils = require "vsn.utils"
 
-local whichKey = utils.require_clean("which-key")
+local whichKey = utils.require_clean "which-key"
 
 local config = {
   setup = {
@@ -249,7 +249,6 @@ local config = {
 }
 
 whichKey.setup(config.setup)
-
 
 local opts = config.opts
 local vopts = config.vopts

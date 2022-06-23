@@ -1,6 +1,6 @@
-local utils = require("vsn.utils")
+local utils = require "vsn.utils"
 
-local project = utils.require_clean("project_nvim")
+local project = utils.require_clean "project_nvim"
 
 local config = {
   ---@usage set to false to disable project.nvim.

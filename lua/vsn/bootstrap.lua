@@ -1,6 +1,6 @@
 local C = {}
 
-local utils = require("vsn.utils")
+local utils = require "vsn.utils"
 
 if vim.fn.has "nvim-0.7" ~= 1 then
   vim.notify("Please upgrade your Neovim base installation. VSNeoVim requires v0.7+", vim.log.levels.WARN)
@@ -61,9 +61,9 @@ function C:init(BASEDIR)
     vim.opt.rtp:prepend(self.data_home .. "/vsneovim-data/site")
     vim.opt.rtp:append(utils.join_paths(self.config_dir, "after"))
 
-    vim.cmd ([[
+    vim.cmd [[
       let &packpath = &runtimepath
-    ]])
+    ]]
   end
 
   vim.fn.stdpath = function(what)
@@ -76,7 +76,6 @@ function C:init(BASEDIR)
     end
     return vim.call("stdpath", what)
   end
-
 end
 
 return C

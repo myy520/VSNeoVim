@@ -1,8 +1,8 @@
-local utils = require("vsn.utils")
+local utils = require "vsn.utils"
 
-local lsp_installer = utils.require_clean("nvim-lsp-installer")
+local lsp_installer = utils.require_clean "nvim-lsp-installer"
 
-local lsp_config = utils.require_clean("lspconfig")
+local lsp_config = utils.require_clean "lspconfig"
 
 local servers = {
   "cssls",

@@ -1,17 +1,24 @@
 local extesion_loader = {}
 
-local utils = require("vsn.utils")
+local utils = require "vsn.utils"
 
 function extesion_loader:init()
   local install_path = vim.fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
   if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-    packer_bootstrap = vim.fn.system({"git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path})
+    packer_bootstrap = vim.fn.system {
+      "git",
+      "clone",
+      "--depth",
+      "1",
+      "https://github.com/wbthomason/packer.nvim",
+      install_path,
+    }
     vim.cmd "packadd packer.nvim"
   end
 
-  local packer = utils.require_clean("packer")
+  local packer = utils.require_clean "packer"
 
-  require("vsn.dconf.defaultConfig")
+  require "vsn.dconf.defaultConfig"
 
   function is_enabled(extension)
     return vsn.configs[extension].active
@@ -43,13 +50,12 @@ function extesion_loader:init()
         toggle_info = "<CR>",
         diff = "d",
         prompt_revert = "r",
-      }
+      },
     },
     log = { level = "warn" }, -- The default print log level. One of: "trace", "debug", "info", "warn", "error", "fatal".
   }
 
-  require("vsn.extensions")
-
+  require "vsn.extensions"
 end
 
 return extesion_loader

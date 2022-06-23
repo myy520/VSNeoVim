@@ -1,5 +1,5 @@
-local utils = require("vsn.utils")
+local utils = require "vsn.utils"
 
-local colorizer = utils.require_clean("colorizer")
+local colorizer = utils.require_clean "colorizer"
 
 colorizer.setup()

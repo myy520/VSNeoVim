@@ -1,14 +1,14 @@
-local utils = require("vsn.utils")
+local utils = require "vsn.utils"
 
-local null_ls = utils.require_clean("null-ls")
+local null_ls = utils.require_clean "null-ls"
 
 local formatting = null_ls.builtins.formatting
 
 local sources = {
-	formatting.eslint,
+  formatting.eslint,
   formatting.autopep8,
-	formatting.stylua,
-	formatting.prettier.with({
+  formatting.stylua,
+  formatting.prettier.with {
     filetype = {
       "javascript",
       "javascriptreact",
@@ -31,11 +31,11 @@ local sources = {
       "cs",
       "graphql",
       "handlebars",
-    }
-  }),
+    },
+  },
 }
 
-null_ls.setup({
+null_ls.setup {
   debug = false,
-  sources = sources
-})
+  sources = sources,
+}

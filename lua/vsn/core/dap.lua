@@ -1,10 +1,10 @@
-local utils = require("vsn.utils")
+local utils = require "vsn.utils"
 
-local dap = utils.require_clean("dap")
+local dap = utils.require_clean "dap"
 
-local dapInstall = utils.require_clean("dap-install")
+local dapInstall = utils.require_clean "dap-install"
 
-local dapUI = utils.require_clean("dapui")
+local dapUI = utils.require_clean "dapui"
 
 local dapUIConfig = {
   icons = { expanded = "▾", collapsed = "▸" },
@@ -19,7 +19,7 @@ local dapUIConfig = {
   layouts = {
     {
       elements = {
-      -- Elements can be strings or table with id and size keys.
+        -- Elements can be strings or table with id and size keys.
         { id = "scopes", size = 0.25 },
         "breakpoints",
         "stacks",
@@ -49,7 +49,7 @@ local dapUIConfig = {
 }
 
 local dapInstallConfig = {
-  installation_path = vim.fn.stdpath("data") .. "/dapinstall/",
+  installation_path = vim.fn.stdpath "data" .. "/dapinstall/",
 }
 
 dapInstall.setup(dapInstallConfig)
@@ -62,8 +62,8 @@ end
 
 dapUI.setup(dapUIConfig)
 
-vim.fn.sign_define('DapBreakpoint', {text='● ', texthl='DiagnosticSignError', linehl='', numhl=''})
-vim.fn.sign_define('DapBreakpointCondition', {text='● ', texthl='DiagnosticSignWarn', linehl='', numhl=''})
-vim.fn.sign_define('DapLogPoint', {text=' ', texthl='DiagnosticSignInfo', linehl='', numhl=''})
-vim.fn.sign_define('DapStopped', {text=' ', texthl='DiagnosticSignWarn', linehl='', numhl=''})
-vim.fn.sign_define('DapBreakpointReject', {text=' ' , texthl='DiagnosticSignHint', linehl='', numhl=''})
+vim.fn.sign_define("DapBreakpoint", { text = "● ", texthl = "DiagnosticSignError", linehl = "", numhl = "" })
+vim.fn.sign_define("DapBreakpointCondition", { text = "● ", texthl = "DiagnosticSignWarn", linehl = "", numhl = "" })
+vim.fn.sign_define("DapLogPoint", { text = " ", texthl = "DiagnosticSignInfo", linehl = "", numhl = "" })
+vim.fn.sign_define("DapStopped", { text = " ", texthl = "DiagnosticSignWarn", linehl = "", numhl = "" })
+vim.fn.sign_define("DapBreakpointReject", { text = " ", texthl = "DiagnosticSignHint", linehl = "", numhl = "" })

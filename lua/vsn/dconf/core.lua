@@ -23,7 +23,7 @@ local core = {
 }
 
 function C:load()
-  for _,v in pairs(core) do
+  for _, v in pairs(core) do
     require(v)
   end
 end

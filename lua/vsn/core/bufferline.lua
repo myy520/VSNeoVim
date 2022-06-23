@@ -1,6 +1,6 @@
-local utils = require("vsn.utils")
+local utils = require "vsn.utils"
 
-local bufferline = utils.require_clean("bufferline")
+local bufferline = utils.require_clean "bufferline"
 
 local config = {
   options = {

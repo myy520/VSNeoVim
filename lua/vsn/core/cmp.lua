@@ -1,8 +1,8 @@
-local utils = require("vsn.utils")
+local utils = require "vsn.utils"
 
-local cmp = utils.require_clean("cmp")
+local cmp = utils.require_clean "cmp"
 
-local luasnip = utils.require_clean("luasnip")
+local luasnip = utils.require_clean "luasnip"
 
 require("luasnip/loaders/from_vscode").lazy_load()
 
@@ -72,14 +72,14 @@ local config = {
       luasnip = 1,
     },
     duplicates_default = 0,
-    fields = { "kind", "abbr" ,"menu" },
+    fields = { "kind", "abbr", "menu" },
     format = function(entry, vim_item, ki, kk)
       vim_item.ki = kind_icons[vim_item.kind]
       vim_item.kk = vim_item.kind
-      vim_item.kind = string.format('%s', vim_item.ki)
+      vim_item.kind = string.format("%s", vim_item.ki)
       vim_item.menu = string.format("%s %s", vim_item.kk, source_names[entry.source.name])
       return vim_item
-    end
+    end,
   },
   snippet = {
     expand = function(args)
@@ -104,11 +104,11 @@ local config = {
     { name = "tmux" },
   },
   mapping = {
-    ['<C-n>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert , exper = true}),
-    ['<C-p>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert , exper = true}),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.close(),
-    ['<Tab>'] = cmp.mapping.confirm({ select = true }),
+    ["<C-n>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert, exper = true },
+    ["<C-p>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert, exper = true },
+    ["<C-Space>"] = cmp.mapping.complete(),
+    ["<C-e>"] = cmp.mapping.close(),
+    ["<Tab>"] = cmp.mapping.confirm { select = true },
   },
 }
 

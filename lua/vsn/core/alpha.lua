@@ -1,8 +1,8 @@
-local utils = require("vsn.utils")
+local utils = require "vsn.utils"
 
-local alpha = utils.require_clean("alpha")
+local alpha = utils.require_clean "alpha"
 
-local dashboard = utils.require_clean("alpha.themes.dashboard")
+local dashboard = utils.require_clean "alpha.themes.dashboard"
 
 local header = {
   "                      ########               ########                      ",
@@ -42,7 +42,7 @@ local types = {
   footer = "Type",
 }
 local footer = {
-  text = "v 2.0.0"
+  text = "v 2.0.0",
 }
 noautocmd = true
 

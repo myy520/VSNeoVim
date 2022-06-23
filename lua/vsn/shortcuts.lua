@@ -51,8 +51,7 @@ local defaults = {
     ["H"] = "<home>",
     ["E"] = "<end>",
   },
-  command_mode = {
-  },
+  command_mode = {},
 }
 
 function C:getshortcuts()

@@ -1,15 +1,15 @@
 local C = {}
 
-local utils = require("vsn.utils")
+local utils = require "vsn.utils"
 
-local builtin = utils.require_clean("telescope.builtin")
-local finders = utils.require_clean("telescope.finders")
-local pickers = utils.require_clean("telescope.pickers")
-local sorters = utils.require_clean("telescope.sorters")
-local themes  = utils.require_clean("telescope.themes")
-local actions = utils.require_clean("telescope.actions")
-local previewers = utils.require_clean("telescope.previewers")
-local make_entry = utils.require_clean("telescope.make_entry")
+local builtin = utils.require_clean "telescope.builtin"
+local finders = utils.require_clean "telescope.finders"
+local pickers = utils.require_clean "telescope.pickers"
+local sorters = utils.require_clean "telescope.sorters"
+local themes = utils.require_clean "telescope.themes"
+local actions = utils.require_clean "telescope.actions"
+local previewers = utils.require_clean "telescope.previewers"
+local make_entry = utils.require_clean "telescope.make_entry"
 
 function C.find_vsneovim_files(opts)
   opts = opts or {}
@@ -38,7 +38,7 @@ function C.grep_vsneovim_files(opts)
 end
 
 local copy_to_clipboard_action = function(prompt_bufnr)
-  local _, action_state = utils.require_clean("telescope.actions.state")
+  local _, action_state = utils.require_clean "telescope.actions.state"
   local entry = action_state.get_selected_entry()
   local version = entry.value
   vim.fn.setreg("+", version)

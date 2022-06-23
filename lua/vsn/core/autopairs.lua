@@ -1,6 +1,6 @@
-local utils = require("vsn.utils")
+local utils = require "vsn.utils"
 
-local npairs = utils.require_clean("nvim-autopairs")
+local npairs = utils.require_clean "nvim-autopairs"
 
 npairs.setup {
   active = true,

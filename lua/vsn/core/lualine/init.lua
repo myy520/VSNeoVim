@@ -1,19 +1,18 @@
-local utils = require("vsn.utils")
+local utils = require "vsn.utils"
 
-lualine = utils.require_clean("lualine")
+lualine = utils.require_clean "lualine"
 
-colors = utils.require_clean("vsn.core.lualine.colors")
+colors = utils.require_clean "vsn.core.lualine.colors"
 
-lualineUTILS = utils.require_clean("vsn.core.lualine.utils")
+lualineUTILS = utils.require_clean "vsn.core.lualine.utils"
 
-conditions = utils.require_clean("vsn.core.lualine.conditions")
-
+conditions = utils.require_clean "vsn.core.lualine.conditions"
 
 local config = {
   options = {
-    component_separators = '',
-    section_separators = '',
-    disabled_filetypes = {"NvimTree", "alpha", "statify", "dashboard", "Outline"},
+    component_separators = "",
+    section_separators = "",
+    disabled_filetypes = { "NvimTree", "alpha", "statify", "dashboard", "Outline" },
     theme = {
       -- We are going to use lualine_c an lualine_x as left and
       -- right section. Both are highlighted by c theme .  So we
@@ -53,6 +52,6 @@ function ins_right(component)
   table.insert(config.sections.lualine_x, component)
 end
 
-components = utils.require_clean("vsn.core.lualine.components")
+components = utils.require_clean "vsn.core.lualine.components"
 
 lualine.setup(config)

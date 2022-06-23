@@ -1,15 +1,15 @@
 ins_left {
   function()
-    return '▊'
+    return "▊"
   end,
   color = { fg = colors.blue }, -- Sets highlighting of component
   padding = { left = 0, right = 0 }, -- We don't need space before this
 }
 
 ins_left {
-  'branch',
-  icon = '',
-  color = { fg = colors.fg, gui = 'bold' },
+  "branch",
+  icon = "",
+  color = { fg = colors.fg, gui = "bold" },
 }
 
 ins_left {
@@ -21,18 +21,18 @@ ins_left {
 }
 
 ins_left {
-  'diagnostics',
-  symbols = { error = ' ', warn = ' ', info = ' ' },
+  "diagnostics",
+  symbols = { error = " ", warn = " ", info = " " },
   diagnostics_color = {
-    error = {fg= colors.red},
-    warn  = {fg= colors.yellow},
-    info  = {fg= colors.blue},
-    hint  = {fg= colors.green},
+    error = { fg = colors.red },
+    warn = { fg = colors.yellow },
+    info = { fg = colors.blue },
+    hint = { fg = colors.green },
   },
   sources = { "nvim_diagnostic" },
-	sections = { "error", "warn", "info", "hint"},
-	update_in_insert = true,
-	always_visible = false,
+  sections = { "error", "warn", "info", "hint" },
+  update_in_insert = true,
+  always_visible = false,
 }
 
 ins_left {
@@ -42,30 +42,30 @@ ins_left {
   end,
   color = {
     fg = colors.fg,
-  }
+  },
 }
 
 ins_left {
   function()
     if vim.bo.filetype == "python" then
       local venv = os.getenv "CONDA_DEFAULT_ENV"
-    if venv then
-      return string.format("  (%s)", conditions.env_cleanup(venv))
-    end
-    venv = os.getenv "VIRTUAL_ENV"
-    if venv then
-      return string.format("  (%s)", conditions.env_cleanup(venv))
+      if venv then
+        return string.format("  (%s)", conditions.env_cleanup(venv))
+      end
+      venv = os.getenv "VIRTUAL_ENV"
+      if venv then
+        return string.format("  (%s)", conditions.env_cleanup(venv))
+      end
+      return ""
     end
     return ""
-  end
-  return ""
   end,
   color = { fg = colors.green },
   cond = conditions.hide_in_width,
 }
 
 ins_right {
-  'diff',
+  "diff",
   symbols = { added = "  ", modified = " ", removed = " " },
   diff_color = {
     added = { fg = colors.green },
@@ -90,8 +90,8 @@ ins_right {
 
 ins_right {
   function()
-    local msg = ' No Active Lsp'
-    local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
+    local msg = " No Active Lsp"
+    local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
     local clients = vim.lsp.get_active_clients()
     if next(clients) == nil then
       return msg
@@ -99,16 +99,16 @@ ins_right {
     for _, client in ipairs(clients) do
       local filetypes = client.config.filetypes
       if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-        return "﫟" .. client.name 
+        return "﫟" .. client.name
       end
     end
     return msg
   end,
-  color = { fg = colors.fg, gui = 'bold' },
+  color = { fg = colors.fg, gui = "bold" },
 }
 
 ins_right {
-  'filetype',
+  "filetype",
   icons_enabled = true,
 }
 

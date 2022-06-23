@@ -1,8 +1,8 @@
-local utils = require("vsn.utils") 
+local utils = require "vsn.utils"
 
-local nvim_tree = utils.require_clean("nvim-tree")
+local nvim_tree = utils.require_clean "nvim-tree"
 
-local nvim_tree_config = utils.require_clean("nvim-tree.config")
+local nvim_tree_config = utils.require_clean "nvim-tree.config"
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
@@ -148,6 +148,6 @@ nvim_tree.setup {
     },
   },
 }
-vim.cmd[[
+vim.cmd [[
   autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
 ]]

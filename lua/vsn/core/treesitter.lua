@@ -1,6 +1,6 @@
-local utils = require("vsn.utils")
+local utils = require "vsn.utils"
 
-local ts_config = utils.require_clean("nvim-treesitter.configs")
+local ts_config = utils.require_clean "nvim-treesitter.configs"
 
 ts_config.setup {
   ensure_installed = "all",
