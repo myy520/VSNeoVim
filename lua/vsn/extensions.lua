@@ -56,6 +56,10 @@ return packer.startup(function(use)
   use { "akinsho/toggleterm.nvim" }
   -- tagbar
   use { "simrat39/symbols-outline.nvim" }
+  -- debuging
+  use { "rcarriga/nvim-dap-ui" }
+  use { "mfussenegger/nvim-dap" }
+  use { "ttbug/DAPInstall.nvim" }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
