@@ -65,6 +65,8 @@ return packer.startup(function(use)
   use {"norcalli/nvim-colorizer.lua", disable = not is_enabled("Colorizer")}
   -- tabnine
   use { "tzachar/cmp-tabnine", run="./install.sh", disable = not is_enabled("Tabnine")}
+  -- indentline
+  use {"lukas-reineke/indent-blankline.nvim", disable = not is_enabled("IndentLine")}
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
