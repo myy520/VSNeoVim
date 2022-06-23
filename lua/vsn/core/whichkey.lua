@@ -132,9 +132,6 @@ local config = {
       S = { "<cmd>PackerStatus<CR>", "Status" },
       u = { "<cmd>PackerUpdate<CR>", "Update" },
     },
-    P = {
-      name = "Extensions"
-    },
 
     -- " Available Debug Adapters:
     -- "   https://miCRosoft.github.io/debug-adapter-protocol/implementors/adapters/
