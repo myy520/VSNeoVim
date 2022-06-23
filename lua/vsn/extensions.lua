@@ -44,6 +44,7 @@ return packer.startup(function(use)
   use { "numToStr/Comment.nvim" }
   -- git
   use { "lewis6991/gitsigns.nvim", disable = not is_enabled("Git") }
+  use {"kdheepak/lazygit.nvim", disable = not is_enabled("Git")}
   -- which-key
   use { "max397574/which-key.nvim", disable = not is_enabled("WhichKey") }
   -- project
