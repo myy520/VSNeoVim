@@ -16,6 +16,7 @@ local core = {
   lualine = "vsn.core.lualine",
   terminal = "vsn.core.terminal",
   tagbar = "vsn.core.tagbar",
+  debuging = "vsn.core.dap",
 }
 
 function C:load()
