@@ -37,5 +37,6 @@ vsn = {
     DAP = {active=true},
     Colorizer = {active=true},
     Tabnine = {active=true},
+    IndentLine = {active=true},
   },
 }
