@@ -2,14 +2,9 @@ local utils = require("vsn.utils")
 local saga = utils.require_clean("lspsaga")
 
 local config = {
-  use_saga_diagnostic_sign = true,
-  error_sign = '',
-  warn_sign = '',
-  hint_sign = '',
-  infor_sign = '',
-  diagnostic_header_icon = '   ',
+  diagnostic_header_icon = {' ',' ',' ','ﴞ '},
   code_action_icon = ' ',
-  code_action_prompt = {
+  code_action_lightbulb = {
     enable = true,
     sign = true,
     sign_priority = 20,
@@ -24,9 +19,7 @@ local config = {
   code_action_keys = {
     quit = 'q',exec = '<CR>'
   },
-  rename_action_keys = {
-    quit = '<C-c>',exec = '<CR>'  -- quit can be a table
-  },
+  rename_action_quit = '<C-c>',
   definition_preview_icon = ' ',
   border_style = "round",
   rename_prompt_prefix = '➤',
