@@ -1,57 +1,66 @@
-return {
-  -- packer
-  { "wbthomason/packer.nvim" },
+local utils = require("vsn.utils")
+local packer = utils.require_clean("packer")
+
+return packer.startup(function(use)
+
+  use{ "tzachar/cmp-tabnine", run="./install.sh"}
+	-- packer
+  use { "wbthomason/packer.nvim" }
   -- onedarker
-  { "vsneovim/onedarker.nvim" },
+  use { "vsneovim/onedarker.nvim" }
   -- icons
-  { "kyazdani42/nvim-web-devicons" },
+  use { "kyazdani42/nvim-web-devicons" }
   -- alpha
-  { "goolord/alpha-nvim" },
+  use { "goolord/alpha-nvim" }
   -- nvim-tree
-  { "kyazdani42/nvim-tree.lua" },
+  use { "kyazdani42/nvim-tree.lua" }
   -- autopairs
-  { "windwp/nvim-autopairs" },
+  use { "windwp/nvim-autopairs" }
   -- lspconfig
-  { "neovim/nvim-lspconfig" },
-  { "williamboman/nvim-lsp-installer" },
-  { "glepnir/lspsaga.nvim" },
-  { "jose-elias-alvarez/null-ls.nvim" },
+  use { "neovim/nvim-lspconfig" }
+  use { "williamboman/nvim-lsp-installer" }
+  use { "glepnir/lspsaga.nvim" }
+  use { "jose-elias-alvarez/null-ls.nvim" }
   -- cmp
-  { "hrsh7th/cmp-nvim-lsp" },
-  { "hrsh7th/cmp-buffer" },
-  { "hrsh7th/cmp-path" },
-  { "hrsh7th/cmp-cmdline" },
-  { "hrsh7th/nvim-cmp" },
-  { "L3MON4D3/LuaSnip" },
-  { "saadparwaiz1/cmp_luasnip" },
+  use { "hrsh7th/cmp-nvim-lsp" }
+  use { "hrsh7th/cmp-buffer" }
+  use { "hrsh7th/cmp-path" }
+  use { "hrsh7th/cmp-cmdline" }
+  use { "hrsh7th/nvim-cmp" }
+  use { "L3MON4D3/LuaSnip" }
+  use { "saadparwaiz1/cmp_luasnip" }
   -- popup
-  { "nvim-lua/popup.nvim" },
+  use { "nvim-lua/popup.nvim" }
   -- plenary
-  { "nvim-lua/plenary.nvim" },
+  use { "nvim-lua/plenary.nvim" }
   -- syntax highlighting (treesitter)
-  { "nvim-treesitter/nvim-treesitter" },
+  use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
   -- fix cursor hold
-  { "antoinemadec/FixCursorHold.nvim" },
+  use { "antoinemadec/FixCursorHold.nvim" }
   -- notifications (notify)
-  { "rcarriga/nvim-notify" },
-  { "nvim-telescope/telescope.nvim" },
+  use { "rcarriga/nvim-notify" }
+  use { "nvim-telescope/telescope.nvim" }
   -- comment
-  { "JoosepAlviste/nvim-ts-context-commentstring" },
-  { "numToStr/Comment.nvim" },
+  use { "JoosepAlviste/nvim-ts-context-commentstring" }
+  use { "numToStr/Comment.nvim" }
   -- git
-  { "lewis6991/gitsigns.nvim" },
+  use { "lewis6991/gitsigns.nvim" }
   -- which-key
-  { "max397574/which-key.nvim" },
+  use { "max397574/which-key.nvim" }
   -- project
-  { "ahmedkhalf/project.nvim" },
+  use { "ahmedkhalf/project.nvim" }
   -- bufferline
-  { "akinsho/bufferline.nvim" },
+  use { "akinsho/bufferline.nvim" }
   -- statusline (bufferline)
-  { "nvim-lualine/lualine.nvim" },
+  use { "nvim-lualine/lualine.nvim" }
   -- terminal
-  { "akinsho/toggleterm.nvim" },
+  use { "akinsho/toggleterm.nvim" }
   -- tagbar
-  { "simrat39/symbols-outline.nvim" },
-  -- debugging
-  { "mfussenegger/nvim-dap" },
-}
+  use { "simrat39/symbols-outline.nvim" }
+
+  -- Automatically set up your configuration after cloning packer.nvim
+  -- Put this at the end after all plugins
+  if packer_bootstrap then
+    packer.sync()
+  end
+end)
