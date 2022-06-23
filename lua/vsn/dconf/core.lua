@@ -17,6 +17,7 @@ local core = {
   terminal = "vsn.core.terminal",
   tagbar = "vsn.core.tagbar",
   debuging = "vsn.core.dap",
+  colorizer = "vsn.core.colorizer",
 }
 
 function C:load()
