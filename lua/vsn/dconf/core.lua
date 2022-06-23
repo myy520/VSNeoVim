@@ -19,6 +19,7 @@ local core = {
   debuging = "vsn.core.dap",
   colorizer = "vsn.core.colorizer",
   lazygit = "vsn.core.lazygit",
+  indentation = "vsn.core.indentline",
 }
 
 function C:load()
