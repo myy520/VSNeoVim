@@ -11,6 +11,12 @@ function extesion_loader:init()
 
   local packer = utils.require_clean("packer")
 
+  require("vsn.dconf.defaultConfig")
+
+  function is_enabled(extension)
+    return vsn.configs[extension].active
+  end
+
   packer.init {
     plugin_package = "packer", -- The default package for plugins
     auto_clean = true, -- During sync(), remove unused plugins
