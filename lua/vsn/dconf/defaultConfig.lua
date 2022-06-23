@@ -24,6 +24,16 @@ vsn = {
     --   require("alpha")...
     --   and etc ...
     
-    nvimTree = {open_fille_on_new_tab=false,width=32,position="left",icons=true,diagnostics=true,enable_git=true,hidden_ignore_files=true}
+    nvimTree = {open_fille_on_new_tab=false,width=32,position="left",icons=true,diagnostics=true,enable_git=true,hidden_ignore_files=true, active=true},
+    useIcon = {active=true},
+    LSP = {active=true},
+    CMP = {active=true},
+    Treesitter = {active=true},
+    Telescope = {active=true},
+    Git = {active=true},
+    WhichKey = {active=true},
+    BufferLine = {active=true},
+    Terminal = {active=true},
+    DAP = {active=true},
   },
 }
