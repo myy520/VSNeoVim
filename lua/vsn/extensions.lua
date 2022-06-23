@@ -50,4 +50,6 @@ return {
   { "nvim-lualine/lualine.nvim" },
   -- terminal
   { "akinsho/toggleterm.nvim" },
+  -- tagbar
+  { "simrat39/symbols-outline.nvim" },
 }
