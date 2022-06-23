@@ -48,4 +48,6 @@ return {
   { "akinsho/bufferline.nvim" },
   -- statusline (bufferline)
   { "nvim-lualine/lualine.nvim" },
+  -- terminal
+  { "akinsho/toggleterm.nvim" },
 }
