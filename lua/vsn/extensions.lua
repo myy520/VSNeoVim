@@ -62,6 +62,8 @@ return packer.startup(function(use)
   use { "ttbug/DAPInstall.nvim", disable = not is_enabled("DAP") }
   -- colorizer
   use {"norcalli/nvim-colorizer.lua", disable = not is_enabled("Colorizer")}
+  -- tabnine
+  use { "tzachar/cmp-tabnine", run="./install.sh", disable = not is_enabled("Tabnine")}
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
