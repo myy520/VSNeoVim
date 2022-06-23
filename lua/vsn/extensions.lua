@@ -52,4 +52,6 @@ return {
   { "akinsho/toggleterm.nvim" },
   -- tagbar
   { "simrat39/symbols-outline.nvim" },
+  -- debugging
+  { "mfussenegger/nvim-dap" },
 }
