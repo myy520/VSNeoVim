@@ -6,7 +6,6 @@ local lsp_config = utils.require_clean("lspconfig")
 
 local servers = {
   "cssls",
-  "emmet_ls",
   "html",
   "sumneko_lua",
   "tsserver",
@@ -53,11 +52,6 @@ for _, server in pairs(servers) do
   if server == "pyright" then
     local pyright_opts = require "vsn.lsp.settings.pyright"
     opts = vim.tbl_deep_extend("force", pyright_opts, opts)
-  end
-
-  if server == "emmet_ls" then
-    local emmet_ls_opts = require "vsn.lsp.settings.emmet_ls"
-    opts = vim.tbl_deep_extend("force", emmet_ls_opts, opts)
   end
 
   lsp_config[server].setup(opts)
