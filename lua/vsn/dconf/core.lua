@@ -18,6 +18,7 @@ local core = {
   tagbar = "vsn.core.tagbar",
   debuging = "vsn.core.dap",
   colorizer = "vsn.core.colorizer",
+  lazygit = "vsn.core.lazygit",
 }
 
 function C:load()
