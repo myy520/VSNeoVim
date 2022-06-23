@@ -35,6 +35,7 @@ vsn = {
     BufferLine = {active=true},
     Terminal = {active=true},
     DAP = {active=true},
-    Colorizer = {active=true}
+    Colorizer = {active=true},
+    Tabnine = {active=true},
   },
 }
