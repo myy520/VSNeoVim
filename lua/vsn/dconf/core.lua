@@ -14,6 +14,7 @@ local core = {
   project = "vsn.core.project",
   bufferline = "vsn.core.bufferline",
   lualine = "vsn.core.lualine",
+  terminal = "vsn.core.terminal",
 }
 
 function C:load()
