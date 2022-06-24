@@ -28,7 +28,6 @@ local config = {
   rename_action_quit = "<C-c>",
   definition_preview_icon = " ",
   border_style = "round",
-  rename_prompt_prefix = "➤",
 }
 
 saga.init_lsp_saga(config)
@@ -41,7 +40,7 @@ vim.keymap.set("n", "K", "<cmd>lua require('lspsaga.hover').render_hover_doc()<C
 vim.keymap.set("n", "F", "<cmd>lua vim.lsp.buf.formatting()<CR>", {})
 vim.keymap.set("n", "<C-k>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>", option)
 vim.keymap.set("n", "<C-j>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>", option)
-vim.keymap.set("n", "gr", "<cmd>lua require('lspsaga.rename').rename()<CR>", option)
+vim.keymap.set("n", "gr", "<cmd>lua require('lspsaga.rename').lsp_rename()<CR>", option)
 vim.keymap.set("n", "gd", "<cmd>lua require'lspsaga.provider'.preview_definition()<CR>", option)
 vim.keymap.set("n", "[e", "<cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_prev()<CR>", option)
 vim.keymap.set("n", "]e", "<cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<CR>", option)
