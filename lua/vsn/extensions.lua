@@ -17,7 +17,7 @@ return packer.startup(function(use)
   -- lspconfig
   use { "neovim/nvim-lspconfig", disable = not is_enabled "LSP" }
   use { "williamboman/nvim-lsp-installer", disable = not is_enabled "LSP" }
-  use { "glepnir/lspsaga.nvim", disable = not is_enabled "LSP" }
+  use { "glepnir/lspsaga.nvim", disable = not is_enabled "LSP", commit="ee3e0bc0d2f4d26fe2f3c3018856c3995a258ffc"}
   use { "jose-elias-alvarez/null-ls.nvim", disable = not is_enabled "LSP" }
   -- cmp
   use { "hrsh7th/cmp-nvim-lsp", disable = not is_enabled "CMP" }
