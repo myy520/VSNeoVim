@@ -51,67 +51,37 @@ C.setup = function()
 end
 
 local function lsp_highlight_document(client)
-  -- if client.server_capabilities.document_highlight then
-  local status_ok, illuminate = pcall(require, "illuminate")
-  if not status_ok then
-    return
+  -- Set autocommands conditional on server_capabilities
+  if client.resolved_capabilities.document_highlight then
+    vim.api.nvim_exec(
+      [[
+      augroup lsp_document_highlight
+        autocmd! * <buffer>
+        autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+        autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+      augroup END
+    ]],
+      false
+    )
   end
-  illuminate.on_attach(client)
-  -- end
 end
 
 C.on_attach = function(client)
-  -- TODO: refactor this into a method that checks if string in list
-
-  if client.name == "jdt.ls" then
-    if JAVA_DAP_ACTIVE then
-      require("jdtls").setup_dap { hotcodereplace = "auto" }
-      require("jdtls.dap").setup_dap_main_class_configs()
-    end
-    C.capabilities.textDocument.completion.completionItem.snippetSupport = false
-    vim.lsp.codelens.refresh()
-  else
-    local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-    if not status_cmp_ok then
-      return
-    end
-
-    C.capabilities.textDocument.completion.completionItem.snippetSupport = true
-    C.capabilities = cmp_nvim_lsp.update_capabilities(C.capabilities)
+  if client.name == "tsserver" then
+    client.resolved_capabilities.document_formatting = false
   end
-
   lsp_highlight_document(client)
 end
 
-function C.enable_format_on_save()
-  vim.cmd [[
-    augroup format_on_save
-      autocmd! 
-      autocmd BufWritePre * lua vim.lsp.buf.format({ async = true }) 
-    augroup end
-  ]]
-  vim.notify "Enabled format on save"
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+
+local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+if not status_ok then
+  return
 end
 
-function C.disable_format_on_save()
-  C.remove_augroup "format_on_save"
-  vim.notify "Disabled format on save"
-end
+C.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
 
-function C.toggle_format_on_save()
-  if vim.fn.exists "#format_on_save#BufWritePre" == 0 then
-    C.enable_format_on_save()
-  else
-    C.disable_format_on_save()
-  end
-end
-
-function C.remove_augroup(name)
-  if vim.fn.exists("#" .. name) == 1 then
-    vim.cmd("au! " .. name)
-  end
-end
-
-vim.cmd [[ command! LspToggleAutoFormat execute 'lua require("vsn.lsp.handlers").toggle_format_on_save()' ]]
+vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 
 return C
