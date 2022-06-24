@@ -58,9 +58,6 @@ function C:getshortcuts()
   for i, k in pairs(defaults.insert_mode) do
     vim.keymap.set(modes.insert_mode, i, k, options)
   end
-  for i, k in pairs(defaults.normal_mode) do
-    vim.keymap.set(modes.normal_mode, i, k, options)
-  end
   for i, k in pairs(defaults.visual_mode) do
     vim.keymap.set(modes.visual_mode, i, k, options)
   end
@@ -69,6 +66,9 @@ function C:getshortcuts()
   end
   for i, k in pairs(defaults.command_mode) do
     vim.keymap.set(modes.command_mode, i, k, options)
+  end
+  for i, k in pairs(defaults.normal_mode) do
+    vim.keymap.set(modes.normal_mode, i, k, options)
   end
 end
 
