@@ -29,12 +29,12 @@ local header = {
   "    YP    `8888Y'   VP   V8P Y88888P  `Y88P'     YP    Y888888P YP  YP  YP ",
 }
 local buttons = {
-  dashboard.button("n", "  New File", ":ene <BAR> startinsert <CR>"),
-  dashboard.button("f", "  Find File", ":Telescope find_files <CR>"),
-  dashboard.button("p", "  Recent Projects", ":Telescope projects <CR>"),
-  dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
-  dashboard.button("t", "  Find Text", ":Telescope live_grep <CR>"),
-  dashboard.button("c", "  configuration", ":edit ~/.config/vsn/config.lua<CR>"),
+  dashboard.button("SPC n", "  New File", ":ene <BAR> startinsert <CR>"),
+  dashboard.button("SPC f", "  Find File", ":Telescope find_files <CR>"),
+  dashboard.button("SPC s p", "  Recent Projects", ":Telescope projects <CR>"),
+  dashboard.button("SPC s r", "  Recently used files", ":Telescope oldfiles <CR>"),
+  dashboard.button("SPC s t", "  Find Text", ":Telescope live_grep <CR>"),
+  dashboard.button("SPC v c", "  configuration", ":edit ~/.config/vsn/config.lua<CR>"),
 }
 local types = {
   header = "Include",
