@@ -50,11 +50,11 @@ ins_left {
     if vim.bo.filetype == "python" then
       local venv = os.getenv "CONDA_DEFAULT_ENV"
       if venv then
-        return string.format("  (%s)", conditions.env_cleanup(venv))
+        return string.format("  (%s)", lualineUTILS.env_cleanup(venv))
       end
       venv = os.getenv "VIRTUAL_ENV"
       if venv then
-        return string.format("  (%s)", conditions.env_cleanup(venv))
+        return string.format("  (%s)", lualineUTILS.env_cleanup(venv))
       end
       return ""
     end
