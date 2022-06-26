@@ -2,7 +2,11 @@ FROM ubuntu:latest
 
 RUN apt update && apt list --upgradable && \
   apt -y install curl sudo git cargo python3-dev python3-pip ripgrep lua5.1 && \
-  apt -y install ninja-build gettext libtool libtool-bin autoconf make automake cmake g++ pkg-config unzip curl doxygen
+  apt -y install ninja-build gettext libtool libtool-bin autoconf make automake cmake g++ pkg-config unzip curl doxygen npm
+
+RUN mkdir ~/.npm-global
+
+RUN npm config set prefix '~/.npm-global'
 
 RUN git clone https://github.com/neovim/neovim
 
