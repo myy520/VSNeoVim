@@ -79,6 +79,7 @@ local config = {
   },
   mappings = {
     ["a"] = { "<cmd>Alpha<CR>", "Dashboard" },
+    ["n"] = { "<cmd>ene <BAR> startinsert <CR>", "New File" },
     ["w"] = { "<cmd>w!<CR>", "Save" },
     ["q"] = { "<cmd>qa!<CR>", "Quit" },
     ["/"] = { "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", "Comment" },
