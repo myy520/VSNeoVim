@@ -46,6 +46,7 @@ function C.load_options()
   vim.opt.shortmess:append "c"
   vim.opt.shortmess:append "I"
   vim.opt.whichwrap:append "<,>,[,],h,l"
+  vim.g.python_recommended_style = 0
 
   for k, v in pairs(default_options) do
     vim.opt[k] = v
