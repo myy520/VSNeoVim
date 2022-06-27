@@ -18,6 +18,8 @@ function extesion_loader:init()
 
   local packer = utils.require_clean "packer"
 
+  require "vsn.dconf.defaultConfig"
+
   function is_enabled(extension)
     return vsn.configs[extension].active
   end
