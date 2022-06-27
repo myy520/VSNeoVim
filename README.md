@@ -34,9 +34,10 @@
 </div>
 
 ## Showcase
-![HOME](./media/2022-05-20_12-39.png)
-![ENVIRONMENT](./media/2022-05-20_13-10.png)
-![COMPILATION](./media/2022-05-20_13-35.png)
+![2022-06-26_16-47](https://user-images.githubusercontent.com/85228025/175995992-3409976d-7ac1-4d38-a243-ac49565ac39b.png)
+![2022-06-26_18-07](https://user-images.githubusercontent.com/85228025/175996015-2baa6f88-58c3-42e6-9821-88e3159e1fc7.png)
+![2022-06-27_20-37](https://user-images.githubusercontent.com/85228025/175996060-ce105e6f-beef-43f6-a6c4-a251a4e1207a.png)
+![2022-06-27_21-40](https://user-images.githubusercontent.com/85228025/175997527-3f4c6bc3-d124-4051-a914-9e70b6c2dd63.png)
 
 NOTE: for running VSNeoVim write ``$ vsn`` or ``$ vsn [file]`` command
 
