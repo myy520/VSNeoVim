@@ -1,13 +1,13 @@
 local C = {}
 
 function C:load()
+  local utils = require "vsn.utils"
+
   require "vsn.dconf.defaultConfig"
 
   vim.cmd('luafile ' .. vim.fn.stdpath("config") .. "/config.lua")
 
-  require("vsn.dconf.settings").load_options()
-
-  vim.cmd("colorscheme " .. vsn.options.theme)
+  utils.require_clean("vsn.dconf.settings").load_options()
 
   require("vsn.dconf.core"):load()
 end
