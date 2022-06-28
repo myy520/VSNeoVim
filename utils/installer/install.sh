@@ -153,7 +153,7 @@ function __installing_utils() {
   echo ""
 }
 function __installing_ripgrep() {
-  if confirm "Would you like to install treesitter and lazygit ?"; then
+  if confirm "Would you like to install ripgrep ?"; then
     $RECOMMEND_INSTALL ripgrep
   fi
   echo ""
