@@ -40,6 +40,6 @@ local config = {
   datapath = get_cache_dir(),
 }
 
-require('telescope').load_extension('projects')
+require("telescope").load_extension "projects"
 
 project.setup(config)

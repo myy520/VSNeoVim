@@ -60,7 +60,6 @@ function extesion_loader:init()
   for _, extension in pairs(vsn.extensions) do
     packer.use(extension)
   end
-
 end
 
 return extesion_loader
