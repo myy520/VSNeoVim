@@ -20,6 +20,7 @@ local core = {
   colorizer = "vsn.core.colorizer",
   lazygit = "vsn.core.lazygit",
   indentation = "vsn.core.indentline",
+  autoclosetag = "vsn.core.act",
 }
 
 function C:load()
