@@ -11,6 +11,7 @@ vsn = {
     shiftwidth = 2,
     tabstop = 2,
     theme = "onedarker",
+    auto_close_tags = true,
   },
   extensions = {
     -- add your oter extensions with this template
