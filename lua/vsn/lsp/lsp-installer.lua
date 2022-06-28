@@ -34,3 +34,6 @@ LSPI.setup(config)
 for _, server in ipairs(LSPI.get_installed_servers()) do
   LSPC[server.name].setup {}
 end
+
+LSPC['sumneko_lua'].setup{settings = utils.require_clean("vsn.lsp.settings.sumneko_lua")}
+LSPC['pyright'].setup{settings = utils.require_clean("vsn.lsp.settings.pyright")}
