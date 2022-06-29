@@ -95,7 +95,7 @@ ins_right {
     if next(buf_clients) == nil then
       -- TODO: clean up this if statement
       if type(msg) == "boolean" or #msg == 0 then
-        return "LS Inactive"
+        return " LSP Inactive"
       end
       return msg
     end
