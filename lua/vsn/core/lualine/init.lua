@@ -10,6 +10,7 @@ conditions = utils.require_clean "vsn.core.lualine.conditions"
 
 local config = {
   options = {
+    globalstatus = true,
     component_separators = "",
     section_separators = "",
     disabled_filetypes = { "NvimTree", "alpha", "statify", "dashboard", "Outline" },
