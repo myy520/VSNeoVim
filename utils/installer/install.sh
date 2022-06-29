@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-declare VSN_BRANCH="${VSN_BRANCH:-"main"}"
+declare VSN_BRANCH="${VSN_BRANCH:-"master"}"
 declare -r VSN_REMOTE="${VSN_REMOTE:-VSNeoVim/VSNeoVim.git}"
 
 declare -r INSTALL_PREFIX="${INSTALL_PREFIX:-"$HOME/.local"}"
