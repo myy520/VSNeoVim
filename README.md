@@ -22,7 +22,7 @@ NOTE: for running VSNeoVim write ``$ vsn`` or ``$ vsn [file]`` command
 
 ## Installation
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/vsneovim/vsneovim/main/utils/installer/install.sh)
+bash <(curl -s https://raw.githubusercontent.com/vsneovim/vsneovim/master/utils/installer/install.sh)
 ```
 ## Configuration file
 To install plugins configure VSNeoVim use the `config.lua` located here: `~/.config/vsn/config.lua`
