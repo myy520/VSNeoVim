@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 declare VSN_BRANCH="${VSN_BRANCH:-"master"}"
 declare -r VSN_REMOTE="${VSN_REMOTE:-VSNeoVim/VSNeoVim.git}"
